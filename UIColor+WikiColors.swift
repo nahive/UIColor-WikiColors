@@ -51,7 +51,7 @@ extension UIColor {
 }
 
 
-extension UIColor {
+public extension UIColor {
     static var absoluteZero: UIColor { return UIColor(rgba: "#0048BA") } 
     static var acidGreen: UIColor { return UIColor(rgba: "#B0BF1A") } 
     static var aero: UIColor { return UIColor(rgba: "#7CB9E8") } 
