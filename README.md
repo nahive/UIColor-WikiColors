@@ -11,6 +11,11 @@ Simply drop `UIColor+WikiColors.swift` into your project and that's it! 🌈
 
 ## Usage
 ```swift
-let view = UIView()
-view.backgroundColor = .aquamarine
+let color = UIColor.aquamarine
+```
+`UIColor+WikiColors.swift` also contains useful `init` for creating colors from hex values - for which I want to thank [yeahdongcn](https://github.com/yeahdongcn/RSBarcodes_Swift/blob/master/Source/UIColorExtension.swift).
+```swift
+let color = UIColor(rgba: "#0048BA")
+let anotherColor = UIColor(rgba: "#abc")
+let justAnotherOne = UIColor(rgba: "#123a") // with alpha
 ```
