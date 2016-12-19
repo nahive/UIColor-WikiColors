@@ -3,7 +3,7 @@
 
 ![Typical Xcode error](https://github.com/nahive/UIColor-WikiColors/blob/master/typical_error.png)
 
-Have you ever tried using ``` UIColor.lightBlue ``` just to be welcomed with an error that such value doesn't exist? Well - fear no more! Now you can have all the colors of the world in one simple extension!
+Have you ever tried using ``` UIColor.lightBlue ``` just to be welcomed with an error that such value doesn't exist? Well - fear no more! Now you can have all the colors of the world in one simple extension! And by all I mean `1 293` of them.
 
 ## Installation
 
