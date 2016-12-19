@@ -1,5 +1,14 @@
 # UIColor-WikiColors
-All wikipedia colors implemented as easy to use UIColor extension
+[All](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F) [wikipedia](https://en.wikipedia.org/wiki/List_of_colors:_G%E2%80%93M) [colors](https://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z) implemented as an easy to use UIColor extension.
 
+Have you ever tried using ``` UIColor.lightBlue ``` just to be welcomed with an error that such value doesn't exist? Well - fear no more! Now you can have all the colors of the world in one simple extension!
 
-![All the colors](https://cdn.meme.am/cache/instances/folder455/500x/74069455.jpg)
+## Installation
+
+Simply drop `UIColor+WikiColors.swift` into your project and that's it! 🌈
+
+## Usage
+```swift
+let view = UIView()
+view.backgroundColor = .aquamarine
+```
