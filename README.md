@@ -19,3 +19,7 @@ let color = UIColor(rgba: "#0048BA")
 let anotherColor = UIColor(rgba: "#abc")
 let justAnotherOne = UIColor(rgba: "#123a") // with alpha
 ```
+## License
+
+The source code is dedicated to the public domain. See the `LICENCE.md` file for
+more information.
