@@ -9,7 +9,7 @@ Have you ever tried using ``` UIColor.lightBlue ``` just to be welcomed with an 
 
 Simply drop `UIColor+WikiColors.swift` into your project and that's it! 🌈
 
-If you prefer using Swift package manager you can do that using `package-manager` branch.
+If you prefer using Swift package manager you can do that using [package-manager](https://github.com/nahive/UIColor-WikiColors/tree/package-manager) branch.
 
 ## Usage
 ```swift
