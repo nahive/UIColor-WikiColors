@@ -17,9 +17,9 @@ let color = UIColor.aquamarine
 ```
 `UIColor+WikiColors.swift` also contains useful `init` for creating colors from hex values - for which I want to thank [yeahdongcn](https://github.com/yeahdongcn/RSBarcodes_Swift/blob/master/Source/UIColorExtension.swift).
 ```swift
-let color = UIColor(rgba: "#0048BA")
-let anotherColor = UIColor(rgba: "#abc")
-let justAnotherOne = UIColor(rgba: "#123a") // with alpha
+let color = UIColor(hex: "#0048BA")
+let anotherColor = UIColor(hex: "#abc")
+let justAnotherOne = UIColor(hex: "#123a") // with alpha
 ```
 ## License
 
