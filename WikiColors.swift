@@ -6,15 +6,15 @@
 import UIKit
 
 extension UIColor {
-    convenience init(rgba: String) {
+    convenience init(hex: String) {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue:  CGFloat = 0.0
         var alpha: CGFloat = 1.0
         
-        if rgba.hasPrefix("#") {
-            let index   = rgba.index(rgba.startIndex, offsetBy: 1)
-            let hex     = rgba.substring(from: index)
+        if hex.hasPrefix("#") {
+            let index   = hex.index(hex.startIndex, offsetBy: 1)
+            let hex     = hex.substring(from: index)
             let scanner = Scanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
             if scanner.scanHexInt64(&hexValue) {
@@ -40,10 +40,10 @@ extension UIColor {
                 default:
                     print("Invalid RGB string, number of characters after # should be either 3, 4, 6 or 8")
                 }
-            } else {
+           } else {
                 print("Scan hex error")
             }
-        } else {
+       } else {
             print("Invalid RGB string, missing # as prefix")
         }
         self.init(red:red, green:green, blue:blue, alpha:alpha)
@@ -52,1298 +52,1298 @@ extension UIColor {
 
 
 public extension UIColor {
-    static var absoluteZero: UIColor { return UIColor(rgba: "#0048BA") } 
-    static var acidGreen: UIColor { return UIColor(rgba: "#B0BF1A") } 
-    static var aero: UIColor { return UIColor(rgba: "#7CB9E8") } 
-    static var aeroBlue: UIColor { return UIColor(rgba: "#C9FFE5") } 
-    static var africanViovar: UIColor { return UIColor(rgba: "#B284BE") } 
-    static var airForceBlueRAF: UIColor { return UIColor(rgba: "#5D8AA8") } 
-    static var airForceBlueUSAF: UIColor { return UIColor(rgba: "#00308F") } 
-    static var airSuperiorityBlue: UIColor { return UIColor(rgba: "#72A0C1") } 
-    static var alabamaCrimson: UIColor { return UIColor(rgba: "#AF002A") } 
-    static var alabaster: UIColor { return UIColor(rgba: "#F2F0E6") } 
-    static var aliceBlue: UIColor { return UIColor(rgba: "#F0F8FF") } 
-    static var alienArmpit: UIColor { return UIColor(rgba: "#84DE02") } 
-    static var alizarinCrimson: UIColor { return UIColor(rgba: "#E32636") } 
-    static var alloyOrange: UIColor { return UIColor(rgba: "#C46210") } 
-    static var almond: UIColor { return UIColor(rgba: "#EFDECD") } 
-    static var amaranth: UIColor { return UIColor(rgba: "#E52B50") } 
-    static var amaranthDeepPurple: UIColor { return UIColor(rgba: "#9F2B68") } 
-    static var amaranthPink: UIColor { return UIColor(rgba: "#F19CBB") } 
-    static var amaranthPurple: UIColor { return UIColor(rgba: "#AB274F") } 
-    static var amaranthRed: UIColor { return UIColor(rgba: "#D3212D") } 
-    static var amazon: UIColor { return UIColor(rgba: "#3B7A57") } 
-    static var amazonite: UIColor { return UIColor(rgba: "#00C4B0") } 
-    static var amber: UIColor { return UIColor(rgba: "#FFBF00") } 
-    static var amberSAEECE: UIColor { return UIColor(rgba: "#FF7E00") } 
-    static var americanRose: UIColor { return UIColor(rgba: "#FF033E") } 
-    static var amethyst: UIColor { return UIColor(rgba: "#9966CC") } 
-    static var androidGreen: UIColor { return UIColor(rgba: "#A4C639") } 
-    static var antiFlashWhite: UIColor { return UIColor(rgba: "#F2F3F4") } 
-    static var antiqueBrass: UIColor { return UIColor(rgba: "#CD9575") } 
-    static var antiqueBronze: UIColor { return UIColor(rgba: "#665D1E") } 
-    static var antiqueFuchsia: UIColor { return UIColor(rgba: "#915C83") } 
-    static var antiqueRuby: UIColor { return UIColor(rgba: "#841B2D") } 
-    static var antiqueWhite: UIColor { return UIColor(rgba: "#FAEBD7") } 
-    static var aoEnglish: UIColor { return UIColor(rgba: "#008000") } 
-    static var appleGreen: UIColor { return UIColor(rgba: "#8DB600") } 
-    static var apricot: UIColor { return UIColor(rgba: "#FBCEB1") } 
-    static var aqua: UIColor { return UIColor(rgba: "#00FFFF") } 
-    static var aquamarine: UIColor { return UIColor(rgba: "#7FFFD4") } 
-    static var arcticLime: UIColor { return UIColor(rgba: "#D0FF14") } 
-    static var armyGreen: UIColor { return UIColor(rgba: "#4B5320") } 
-    static var arsenic: UIColor { return UIColor(rgba: "#3B444B") } 
-    static var artichoke: UIColor { return UIColor(rgba: "#8F9779") } 
-    static var arylideYellow: UIColor { return UIColor(rgba: "#E9D66B") } 
-    static var ashGrey: UIColor { return UIColor(rgba: "#B2BEB5") } 
-    static var asparagus: UIColor { return UIColor(rgba: "#87A96B") } 
-    static var atomicTangerine: UIColor { return UIColor(rgba: "#FF9966") } 
-    static var auburn: UIColor { return UIColor(rgba: "#A52A2A") } 
-    static var aureolin: UIColor { return UIColor(rgba: "#FDEE00") } 
-    static var auroMetalSaurus: UIColor { return UIColor(rgba: "#6E7F80") } 
-    static var avocado: UIColor { return UIColor(rgba: "#568203") } 
-    static var awesome: UIColor { return UIColor(rgba: "#FF2052") } 
-    static var aztecGold: UIColor { return UIColor(rgba: "#C39953") } 
-    static var azure: UIColor { return UIColor(rgba: "#007FFF") } 
-    static var azureWebColor: UIColor { return UIColor(rgba: "#F0FFFF") } 
-    static var azureMist: UIColor { return UIColor(rgba: "#F0FFFF") } 
-    static var azureishWhite: UIColor { return UIColor(rgba: "#DBE9F4") } 
-    static var babyBlue: UIColor { return UIColor(rgba: "#89CFF0") } 
-    static var babyBlueEyes: UIColor { return UIColor(rgba: "#A1CAF1") } 
-    static var babyPink: UIColor { return UIColor(rgba: "#F4C2C2") } 
-    static var babyPowder: UIColor { return UIColor(rgba: "#FEFEFA") } 
-    static var bakerMillerPink: UIColor { return UIColor(rgba: "#FF91AF") } 
-    static var ballBlue: UIColor { return UIColor(rgba: "#21ABCD") } 
-    static var bananaMania: UIColor { return UIColor(rgba: "#FAE7B5") } 
-    static var bananaYellow: UIColor { return UIColor(rgba: "#FFE135") } 
-    static var bangladeshGreen: UIColor { return UIColor(rgba: "#006A4E") } 
-    static var barbiePink: UIColor { return UIColor(rgba: "#E0218A") } 
-    static var barnRed: UIColor { return UIColor(rgba: "#7C0A02") } 
-    static var batteryChargedBlue: UIColor { return UIColor(rgba: "#1DACD6") } 
-    static var battleshipGrey: UIColor { return UIColor(rgba: "#848482") } 
-    static var bazaar: UIColor { return UIColor(rgba: "#98777B") } 
-    static var beauBlue: UIColor { return UIColor(rgba: "#BCD4E6") } 
-    static var beaver: UIColor { return UIColor(rgba: "#9F8170") } 
-    static var begonia: UIColor { return UIColor(rgba: "#FA6E79") } 
-    static var beige: UIColor { return UIColor(rgba: "#F5F5DC") } 
-    static var bdazzledBlue: UIColor { return UIColor(rgba: "#2E5894") }
-    static var bigDipOruby: UIColor { return UIColor(rgba: "#9C2542") }
-    static var bigFootFeet: UIColor { return UIColor(rgba: "#E88E5A") } 
-    static var bisque: UIColor { return UIColor(rgba: "#FFE4C4") } 
-    static var bistre: UIColor { return UIColor(rgba: "#3D2B1F") } 
-    static var bistreBrown: UIColor { return UIColor(rgba: "#967117") } 
-    static var bitterLemon: UIColor { return UIColor(rgba: "#CAE00D") } 
-    static var bitterLime: UIColor { return UIColor(rgba: "#BFFF00") } 
-    static var bittersweet: UIColor { return UIColor(rgba: "#FE6F5E") } 
-    static var bittersweetShimmer: UIColor { return UIColor(rgba: "#BF4F51") } 
-    static var black: UIColor { return UIColor(rgba: "#000000") } 
-    static var blackBean: UIColor { return UIColor(rgba: "#3D0C02") } 
-    static var blackCoral: UIColor { return UIColor(rgba: "#54626F") } 
-    static var blackLeatherJacket: UIColor { return UIColor(rgba: "#253529") } 
-    static var blackOlive: UIColor { return UIColor(rgba: "#3B3C36") } 
-    static var blackShadows: UIColor { return UIColor(rgba: "#BFAFB2") } 
-    static var blanchedAlmond: UIColor { return UIColor(rgba: "#FFEBCD") } 
-    static var blastOffBronze: UIColor { return UIColor(rgba: "#A57164") } 
-    static var bleuDeFrance: UIColor { return UIColor(rgba: "#318CE7") } 
-    static var blizzardBlue: UIColor { return UIColor(rgba: "#ACE5EE") } 
-    static var blond: UIColor { return UIColor(rgba: "#FAF0BE") } 
-    static var blue: UIColor { return UIColor(rgba: "#0000FF") } 
-    static var blueCrayola: UIColor { return UIColor(rgba: "#1F75FE") } 
-    static var blueMunsell: UIColor { return UIColor(rgba: "#0093AF") } 
-    static var blueNCS: UIColor { return UIColor(rgba: "#0087BD") } 
-    static var bluePantone: UIColor { return UIColor(rgba: "#0018A8") } 
-    static var bluePigment: UIColor { return UIColor(rgba: "#333399") } 
-    static var blueRYB: UIColor { return UIColor(rgba: "#0247FE") } 
-    static var blueBell: UIColor { return UIColor(rgba: "#A2A2D0") } 
-    static var blueBolt: UIColor { return UIColor(rgba: "#00B9FB") } 
-    static var blueGray: UIColor { return UIColor(rgba: "#6699CC") } 
-    static var blueGreen: UIColor { return UIColor(rgba: "#0D98BA") } 
-    static var blueJeans: UIColor { return UIColor(rgba: "#5DADEC") } 
-    static var blueLagoon: UIColor { return UIColor(rgba: "#ACE5EE") } 
-    static var blueMagentaViovar: UIColor { return UIColor(rgba: "#553592") } 
-    static var blueSapphire: UIColor { return UIColor(rgba: "#126180") } 
-    static var blueViovar: UIColor { return UIColor(rgba: "#8A2BE2") } 
-    static var blueYonder: UIColor { return UIColor(rgba: "#5072A7") } 
-    static var blueberry: UIColor { return UIColor(rgba: "#4F86F7") } 
-    static var bluebonnet: UIColor { return UIColor(rgba: "#1C1CF0") } 
-    static var blush: UIColor { return UIColor(rgba: "#DE5D83") } 
-    static var bole: UIColor { return UIColor(rgba: "#79443B") } 
-    static var bondiBlue: UIColor { return UIColor(rgba: "#0095B6") } 
-    static var bone: UIColor { return UIColor(rgba: "#E3DAC9") } 
-    static var boogerBuster: UIColor { return UIColor(rgba: "#DDE26A") } 
-    static var bostonUniversityRed: UIColor { return UIColor(rgba: "#CC0000") } 
-    static var bottleGreen: UIColor { return UIColor(rgba: "#006A4E") } 
-    static var boysenberry: UIColor { return UIColor(rgba: "#873260") } 
-    static var brandeisBlue: UIColor { return UIColor(rgba: "#0070FF") } 
-    static var brass: UIColor { return UIColor(rgba: "#B5A642") } 
-    static var brickRed: UIColor { return UIColor(rgba: "#CB4154") } 
-    static var brightCerulean: UIColor { return UIColor(rgba: "#1DACD6") } 
-    static var brightGreen: UIColor { return UIColor(rgba: "#66FF00") } 
-    static var brightLavender: UIColor { return UIColor(rgba: "#BF94E4") } 
-    static var brightLilac: UIColor { return UIColor(rgba: "#D891EF") } 
-    static var brightMaroon: UIColor { return UIColor(rgba: "#C32148") } 
-    static var brightNavyBlue: UIColor { return UIColor(rgba: "#1974D2") } 
-    static var brightPink: UIColor { return UIColor(rgba: "#FF007F") } 
-    static var brightTurquoise: UIColor { return UIColor(rgba: "#08E8DE") } 
-    static var brightUbe: UIColor { return UIColor(rgba: "#D19FE8") } 
-    static var brightYellowCrayola: UIColor { return UIColor(rgba: "#FFAA1D") } 
-    static var brilliantAzure: UIColor { return UIColor(rgba: "#3399FF") } 
-    static var brilliantLavender: UIColor { return UIColor(rgba: "#F4BBFF") } 
-    static var brilliantRose: UIColor { return UIColor(rgba: "#FF55A3") } 
-    static var brinkPink: UIColor { return UIColor(rgba: "#FB607F") } 
-    static var britishRacingGreen: UIColor { return UIColor(rgba: "#004225") } 
-    static var bronze: UIColor { return UIColor(rgba: "#CD7F32") } 
-    static var bronzeYellow: UIColor { return UIColor(rgba: "#737000") } 
-    static var brownTraditional: UIColor { return UIColor(rgba: "#964B00") } 
-    static var brownWeb: UIColor { return UIColor(rgba: "#A52A2A") } 
-    static var brownNose: UIColor { return UIColor(rgba: "#6B4423") } 
-    static var brownSugar: UIColor { return UIColor(rgba: "#AF6E4D") } 
-    static var brownYellow: UIColor { return UIColor(rgba: "#cc9966") } 
-    static var brunswickGreen: UIColor { return UIColor(rgba: "#1B4D3E") } 
-    static var bubbleGum: UIColor { return UIColor(rgba: "#FFC1CC") } 
-    static var bubbles: UIColor { return UIColor(rgba: "#E7FEFF") } 
-    static var budGreen: UIColor { return UIColor(rgba: "#7BB661") } 
-    static var buff: UIColor { return UIColor(rgba: "#F0DC82") } 
-    static var bulgarianRose: UIColor { return UIColor(rgba: "#480607") } 
-    static var burgundy: UIColor { return UIColor(rgba: "#800020") } 
-    static var burlywood: UIColor { return UIColor(rgba: "#DEB887") } 
-    static var burnishedBrown: UIColor { return UIColor(rgba: "#A17A74") } 
-    static var burntOrange: UIColor { return UIColor(rgba: "#CC5500") } 
-    static var burntSienna: UIColor { return UIColor(rgba: "#E97451") } 
-    static var burntUmber: UIColor { return UIColor(rgba: "#8A3324") } 
-    static var buttonBlue: UIColor { return UIColor(rgba: "#24A0ED") } 
-    static var byzantine: UIColor { return UIColor(rgba: "#BD33A4") } 
-    static var byzantium: UIColor { return UIColor(rgba: "#702963") } 
-    static var cadet: UIColor { return UIColor(rgba: "#536872") } 
-    static var cadetBlue: UIColor { return UIColor(rgba: "#5F9EA0") } 
-    static var cadetGrey: UIColor { return UIColor(rgba: "#91A3B0") } 
-    static var cadmiumGreen: UIColor { return UIColor(rgba: "#006B3C") } 
-    static var cadmiumOrange: UIColor { return UIColor(rgba: "#ED872D") } 
-    static var cadmiumRed: UIColor { return UIColor(rgba: "#E30022") } 
-    static var cadmiumYellow: UIColor { return UIColor(rgba: "#FFF600") } 
-    static var caféAuLait: UIColor { return UIColor(rgba: "#A67B5B") } 
-    static var caféNoir: UIColor { return UIColor(rgba: "#4B3621") } 
-    static var calPolyPomonaGreen: UIColor { return UIColor(rgba: "#1E4D2B") } 
-    static var cambridgeBlue: UIColor { return UIColor(rgba: "#A3C1AD") } 
-    static var camel: UIColor { return UIColor(rgba: "#C19A6B") } 
-    static var cameoPink: UIColor { return UIColor(rgba: "#EFBBCC") } 
-    static var camouflageGreen: UIColor { return UIColor(rgba: "#78866B") } 
-    static var canary: UIColor { return UIColor(rgba: "#FFFF99") } 
-    static var canaryYellow: UIColor { return UIColor(rgba: "#FFEF00") } 
-    static var candyAppleRed: UIColor { return UIColor(rgba: "#FF0800") } 
-    static var candyPink: UIColor { return UIColor(rgba: "#E4717A") } 
-    static var capri: UIColor { return UIColor(rgba: "#00BFFF") } 
-    static var caputMortuum: UIColor { return UIColor(rgba: "#592720") } 
-    static var cardinal: UIColor { return UIColor(rgba: "#C41E3A") } 
-    static var caribbeanGreen: UIColor { return UIColor(rgba: "#00CC99") } 
-    static var carmine: UIColor { return UIColor(rgba: "#960018") } 
-    static var carmineMP: UIColor { return UIColor(rgba: "#D70040") }
-    static var carminePink: UIColor { return UIColor(rgba: "#EB4C42") } 
-    static var carmineRed: UIColor { return UIColor(rgba: "#FF0038") } 
-    static var carnationPink: UIColor { return UIColor(rgba: "#FFA6C9") } 
-    static var carnelian: UIColor { return UIColor(rgba: "#B31B1B") } 
-    static var carolinaBlue: UIColor { return UIColor(rgba: "#56A0D3") } 
-    static var carrotOrange: UIColor { return UIColor(rgba: "#ED9121") } 
-    static var castvaronGreen: UIColor { return UIColor(rgba: "#00563F") } 
-    static var catalinaBlue: UIColor { return UIColor(rgba: "#062A78") } 
-    static var catawba: UIColor { return UIColor(rgba: "#703642") } 
-    static var cedarChest: UIColor { return UIColor(rgba: "#C95A49") } 
-    static var ceil: UIColor { return UIColor(rgba: "#92A1CF") } 
-    static var celadon: UIColor { return UIColor(rgba: "#ACE1AF") } 
-    static var celadonBlue: UIColor { return UIColor(rgba: "#007BA7") } 
-    static var celadonGreen: UIColor { return UIColor(rgba: "#2F847C") } 
-    static var celeste: UIColor { return UIColor(rgba: "#B2FFFF") } 
-    static var celestialBlue: UIColor { return UIColor(rgba: "#4997D0") } 
-    static var cerise: UIColor { return UIColor(rgba: "#DE3163") } 
-    static var cerisePink: UIColor { return UIColor(rgba: "#EC3B83") } 
-    static var cerulean: UIColor { return UIColor(rgba: "#007BA7") } 
-    static var ceruleanBlue: UIColor { return UIColor(rgba: "#2A52BE") } 
-    static var ceruleanFrost: UIColor { return UIColor(rgba: "#6D9BC3") } 
-    static var cGBlue: UIColor { return UIColor(rgba: "#007AA5") } 
-    static var cGRed: UIColor { return UIColor(rgba: "#E03C31") } 
-    static var chamoisee: UIColor { return UIColor(rgba: "#A0785A") } 
-    static var champagne: UIColor { return UIColor(rgba: "#F7E7CE") } 
-    static var champagnePink: UIColor { return UIColor(rgba: "#F1DDCF") } 
-    static var charcoal: UIColor { return UIColor(rgba: "#36454F") } 
-    static var charlestonGreen: UIColor { return UIColor(rgba: "#232B2B") } 
-    static var charmPink: UIColor { return UIColor(rgba: "#E68FAC") } 
-    static var chartreuseTraditional: UIColor { return UIColor(rgba: "#DFFF00") } 
-    static var chartreuseWeb: UIColor { return UIColor(rgba: "#7FFF00") } 
-    static var cherry: UIColor { return UIColor(rgba: "#DE3163") } 
-    static var cherryBlossomPink: UIColor { return UIColor(rgba: "#FFB7C5") } 
-    static var chestnut: UIColor { return UIColor(rgba: "#954535") } 
-    static var chinaPink: UIColor { return UIColor(rgba: "#DE6FA1") } 
-    static var chinaRose: UIColor { return UIColor(rgba: "#A8516E") } 
-    static var chineseRed: UIColor { return UIColor(rgba: "#AA381E") } 
-    static var chineseViovar: UIColor { return UIColor(rgba: "#856088") } 
-    static var chlorophyllGreen: UIColor { return UIColor(rgba: "#4AFF00") } 
-    static var chocolateTraditional: UIColor { return UIColor(rgba: "#7B3F00") } 
-    static var chocolateWeb: UIColor { return UIColor(rgba: "#D2691E") } 
-    static var chromeYellow: UIColor { return UIColor(rgba: "#FFA700") } 
-    static var cinereous: UIColor { return UIColor(rgba: "#98817B") } 
-    static var cinnabar: UIColor { return UIColor(rgba: "#E34234") } 
-    static var cinnamon: UIColor { return UIColor(rgba: "#D2691E") }
-    static var cinnamonSatin: UIColor { return UIColor(rgba: "#CD607E") } 
-    static var citrine: UIColor { return UIColor(rgba: "#E4D00A") } 
-    static var citron: UIColor { return UIColor(rgba: "#9FA91F") } 
-    static var claret: UIColor { return UIColor(rgba: "#7F1734") } 
-    static var classicRose: UIColor { return UIColor(rgba: "#FBCCE7") } 
-    static var cobaltBlue: UIColor { return UIColor(rgba: "#0047AB") } 
-    static var cocoaBrown: UIColor { return UIColor(rgba: "#D2691E") } 
-    static var coconut: UIColor { return UIColor(rgba: "#965A3E") } 
-    static var coffee: UIColor { return UIColor(rgba: "#6F4E37") } 
-    static var columbiaBlue: UIColor { return UIColor(rgba: "#C4D8E2") } 
-    static var congoPink: UIColor { return UIColor(rgba: "#F88379") } 
-    static var coolBlack: UIColor { return UIColor(rgba: "#002E63") } 
-    static var coolGrey: UIColor { return UIColor(rgba: "#8C92AC") } 
-    static var copper: UIColor { return UIColor(rgba: "#B87333") } 
-    static var copperCrayola: UIColor { return UIColor(rgba: "#DA8A67") } 
-    static var copperPenny: UIColor { return UIColor(rgba: "#AD6F69") } 
-    static var copperRed: UIColor { return UIColor(rgba: "#CB6D51") } 
-    static var copperRose: UIColor { return UIColor(rgba: "#996666") } 
-    static var coquelicot: UIColor { return UIColor(rgba: "#FF3800") } 
-    static var coral: UIColor { return UIColor(rgba: "#FF7F50") } 
-    static var coralPink: UIColor { return UIColor(rgba: "#F88379") } 
-    static var coralRed: UIColor { return UIColor(rgba: "#FF4040") } 
-    static var coralReef: UIColor { return UIColor(rgba: "#FD7C6E") } 
-    static var cordovan: UIColor { return UIColor(rgba: "#893F45") } 
-    static var corn: UIColor { return UIColor(rgba: "#FBEC5D") } 
-    static var cornellRed: UIColor { return UIColor(rgba: "#B31B1B") } 
-    static var cornflowerBlue: UIColor { return UIColor(rgba: "#6495ED") } 
-    static var cornsilk: UIColor { return UIColor(rgba: "#FFF8DC") } 
-    static var cosmicCobalt: UIColor { return UIColor(rgba: "#2E2D88") } 
-    static var cosmicLatte: UIColor { return UIColor(rgba: "#FFF8E7") } 
-    static var coyoteBrown: UIColor { return UIColor(rgba: "#81613C") } 
-    static var cottonCandy: UIColor { return UIColor(rgba: "#FFBCD9") } 
-    static var cream: UIColor { return UIColor(rgba: "#FFFDD0") } 
-    static var crimson: UIColor { return UIColor(rgba: "#DC143C") } 
-    static var crimsonGlory: UIColor { return UIColor(rgba: "#BE0032") } 
-    static var crimsonRed: UIColor { return UIColor(rgba: "#990000") } 
-    static var cultured: UIColor { return UIColor(rgba: "#F5F5F5") } 
-    static var cyan: UIColor { return UIColor(rgba: "#00FFFF") } 
-    static var cyanAzure: UIColor { return UIColor(rgba: "#4E82B4") } 
-    static var cyanBlueAzure: UIColor { return UIColor(rgba: "#4682BF") } 
-    static var cyanCobaltBlue: UIColor { return UIColor(rgba: "#28589C") } 
-    static var cyanCornflowerBlue: UIColor { return UIColor(rgba: "#188BC2") } 
-    static var cyanProcess: UIColor { return UIColor(rgba: "#00B7EB") } 
-    static var cyberGrape: UIColor { return UIColor(rgba: "#58427C") } 
-    static var cyberYellow: UIColor { return UIColor(rgba: "#FFD300") } 
-    static var cyclamen: UIColor { return UIColor(rgba: "#F56FA1") } 
-    static var daffodil: UIColor { return UIColor(rgba: "#FFFF31") } 
-    static var dandelion: UIColor { return UIColor(rgba: "#F0E130") } 
-    static var darkBlue: UIColor { return UIColor(rgba: "#00008B") } 
-    static var darkBlueGray: UIColor { return UIColor(rgba: "#666699") } 
-    static var darkBrown: UIColor { return UIColor(rgba: "#654321") } 
-    static var darkBrownTangelo: UIColor { return UIColor(rgba: "#88654E") } 
-    static var darkByzantium: UIColor { return UIColor(rgba: "#5D3954") } 
-    static var darkCandyAppleRed: UIColor { return UIColor(rgba: "#A40000") } 
-    static var darkCerulean: UIColor { return UIColor(rgba: "#08457E") } 
-    static var darkChestnut: UIColor { return UIColor(rgba: "#986960") } 
-    static var darkCoral: UIColor { return UIColor(rgba: "#CD5B45") } 
-    static var darkCyan: UIColor { return UIColor(rgba: "#008B8B") } 
-    static var darkElectricBlue: UIColor { return UIColor(rgba: "#536878") } 
-    static var darkGoldenrod: UIColor { return UIColor(rgba: "#B8860B") } 
-    static var darkGrayX11: UIColor { return UIColor(rgba: "#A9A9A9") } 
-    static var darkGreen: UIColor { return UIColor(rgba: "#013220") } 
-    static var darkGreenX11: UIColor { return UIColor(rgba: "#006400") } 
-    static var darkGunmetal: UIColor { return UIColor(rgba: "#1F262A") } 
-    static var darkImperialBlue: UIColor { return UIColor(rgba: "#00416A") }
-    static var darkJungleGreen: UIColor { return UIColor(rgba: "#1A2421") } 
-    static var darkKhaki: UIColor { return UIColor(rgba: "#BDB76B") } 
-    static var darkLava: UIColor { return UIColor(rgba: "#483C32") } 
-    static var darkLavender: UIColor { return UIColor(rgba: "#734F96") } 
-    static var darkLiver: UIColor { return UIColor(rgba: "#534B4F") } 
-    static var darkLiverHorses: UIColor { return UIColor(rgba: "#543D37") } 
-    static var darkMagenta: UIColor { return UIColor(rgba: "#8B008B") } 
-    static var darkMediumGray: UIColor { return UIColor(rgba: "#A9A9A9") } 
-    static var darkMidnightBlue: UIColor { return UIColor(rgba: "#003366") } 
-    static var darkMossGreen: UIColor { return UIColor(rgba: "#4A5D23") } 
-    static var darkOliveGreen: UIColor { return UIColor(rgba: "#556B2F") } 
-    static var darkOrange: UIColor { return UIColor(rgba: "#FF8C00") } 
-    static var darkOrchid: UIColor { return UIColor(rgba: "#9932CC") } 
-    static var darkPastelBlue: UIColor { return UIColor(rgba: "#779ECB") } 
-    static var darkPastelGreen: UIColor { return UIColor(rgba: "#03C03C") } 
-    static var darkPastelPurple: UIColor { return UIColor(rgba: "#966FD6") } 
-    static var darkPastelRed: UIColor { return UIColor(rgba: "#C23B22") } 
-    static var darkPink: UIColor { return UIColor(rgba: "#E75480") } 
-    static var darkPowderBlue: UIColor { return UIColor(rgba: "#003399") } 
-    static var darkPuce: UIColor { return UIColor(rgba: "#4F3A3C") } 
-    static var darkPurple: UIColor { return UIColor(rgba: "#301934") } 
-    static var darkRaspberry: UIColor { return UIColor(rgba: "#872657") } 
-    static var darkRed: UIColor { return UIColor(rgba: "#8B0000") } 
-    static var darkSalmon: UIColor { return UIColor(rgba: "#E9967A") } 
-    static var darkScarvar: UIColor { return UIColor(rgba: "#560319") } 
-    static var darkSeaGreen: UIColor { return UIColor(rgba: "#8FBC8F") } 
-    static var darkSienna: UIColor { return UIColor(rgba: "#3C1414") } 
-    static var darkSkyBlue: UIColor { return UIColor(rgba: "#8CBED6") } 
-    static var darkSlateBlue: UIColor { return UIColor(rgba: "#483D8B") } 
-    static var darkSlateGray: UIColor { return UIColor(rgba: "#2F4F4F") } 
-    static var darkSpringGreen: UIColor { return UIColor(rgba: "#177245") } 
-    static var darkTan: UIColor { return UIColor(rgba: "#918151") } 
-    static var darkTangerine: UIColor { return UIColor(rgba: "#FFA812") } 
-    static var darkTaupe: UIColor { return UIColor(rgba: "#483C32") } 
-    static var darkTerraCotta: UIColor { return UIColor(rgba: "#CC4E5C") } 
-    static var darkTurquoise: UIColor { return UIColor(rgba: "#00CED1") } 
-    static var darkVanilla: UIColor { return UIColor(rgba: "#D1BEA8") } 
-    static var darkViovar: UIColor { return UIColor(rgba: "#9400D3") } 
-    static var darkYellow: UIColor { return UIColor(rgba: "#9B870C") } 
-    static var dartmouthGreen: UIColor { return UIColor(rgba: "#00703C") } 
-    static var davysGrey: UIColor { return UIColor(rgba: "#555555") }
-    static var debianRed: UIColor { return UIColor(rgba: "#D70A53") } 
-    static var deepAquamarine: UIColor { return UIColor(rgba: "#40826D") } 
-    static var deepCarmine: UIColor { return UIColor(rgba: "#A9203E") } 
-    static var deepCarminePink: UIColor { return UIColor(rgba: "#EF3038") } 
-    static var deepCarrotOrange: UIColor { return UIColor(rgba: "#E9692C") } 
-    static var deepCerise: UIColor { return UIColor(rgba: "#DA3287") } 
-    static var deepChampagne: UIColor { return UIColor(rgba: "#FAD6A5") } 
-    static var deepChestnut: UIColor { return UIColor(rgba: "#B94E48") } 
-    static var deepCoffee: UIColor { return UIColor(rgba: "#704241") } 
-    static var deepFuchsia: UIColor { return UIColor(rgba: "#C154C1") } 
-    static var deepGreen: UIColor { return UIColor(rgba: "#056608") } 
-    static var deepGreenCyanTurquoise: UIColor { return UIColor(rgba: "#0E7C61") } 
-    static var deepJungleGreen: UIColor { return UIColor(rgba: "#004B49") } 
-    static var deepKoamaru: UIColor { return UIColor(rgba: "#333366") } 
-    static var deepLemon: UIColor { return UIColor(rgba: "#F5C71A") } 
-    static var deepLilac: UIColor { return UIColor(rgba: "#9955BB") } 
-    static var deepMagenta: UIColor { return UIColor(rgba: "#CC00CC") } 
-    static var deepMaroon: UIColor { return UIColor(rgba: "#820000") } 
-    static var deepMauve: UIColor { return UIColor(rgba: "#D473D4") } 
-    static var deepMossGreen: UIColor { return UIColor(rgba: "#355E3B") } 
-    static var deepPeach: UIColor { return UIColor(rgba: "#FFCBA4") } 
-    static var deepPink: UIColor { return UIColor(rgba: "#FF1493") } 
-    static var deepPuce: UIColor { return UIColor(rgba: "#A95C68") } 
-    static var deepRed: UIColor { return UIColor(rgba: "#850101") } 
-    static var deepRuby: UIColor { return UIColor(rgba: "#843F5B") } 
-    static var deepSaffron: UIColor { return UIColor(rgba: "#FF9933") } 
-    static var deepSkyBlue: UIColor { return UIColor(rgba: "#00BFFF") } 
-    static var deepSpaceSparkle: UIColor { return UIColor(rgba: "#4A646C") } 
-    static var deepSpringBud: UIColor { return UIColor(rgba: "#556B2F") } 
-    static var deepTaupe: UIColor { return UIColor(rgba: "#7E5E60") } 
-    static var deepTuscanRed: UIColor { return UIColor(rgba: "#66424D") } 
-    static var deepViovar: UIColor { return UIColor(rgba: "#330066") } 
-    static var deer: UIColor { return UIColor(rgba: "#BA8759") } 
-    static var denim: UIColor { return UIColor(rgba: "#1560BD") } 
-    static var denimBlue: UIColor { return UIColor(rgba: "#2243B6") } 
-    static var desaturatedCyan: UIColor { return UIColor(rgba: "#669999") } 
-    static var desert: UIColor { return UIColor(rgba: "#C19A6B") } 
-    static var desertSand: UIColor { return UIColor(rgba: "#EDC9AF") } 
-    static var desire: UIColor { return UIColor(rgba: "#EA3C53") } 
-    static var diamond: UIColor { return UIColor(rgba: "#B9F2FF") } 
-    static var dimGray: UIColor { return UIColor(rgba: "#696969") } 
-    static var dingyDungeon: UIColor { return UIColor(rgba: "#C53151") } 
-    static var dirt: UIColor { return UIColor(rgba: "#9B7653") } 
-    static var dodgerBlue: UIColor { return UIColor(rgba: "#1E90FF") } 
-    static var dogwoodRose: UIColor { return UIColor(rgba: "#D71868") } 
-    static var dollarBill: UIColor { return UIColor(rgba: "#85BB65") } 
-    static var dolphinGray: UIColor { return UIColor(rgba: "#828E84") } 
-    static var donkeyBrown: UIColor { return UIColor(rgba: "#664C28") } 
-    static var drab: UIColor { return UIColor(rgba: "#967117") } 
-    static var dukeBlue: UIColor { return UIColor(rgba: "#00009C") } 
-    static var dustStorm: UIColor { return UIColor(rgba: "#E5CCC9") } 
-    static var dutchWhite: UIColor { return UIColor(rgba: "#EFDFBB") } 
-    static var earthYellow: UIColor { return UIColor(rgba: "#E1A95F") } 
-    static var ebony: UIColor { return UIColor(rgba: "#555D50") } 
-    static var ecru: UIColor { return UIColor(rgba: "#C2B280") } 
-    static var eerieBlack: UIColor { return UIColor(rgba: "#1B1B1B") } 
-    static var eggplant: UIColor { return UIColor(rgba: "#614051") } 
-    static var eggshell: UIColor { return UIColor(rgba: "#F0EAD6") } 
-    static var egyptianBlue: UIColor { return UIColor(rgba: "#1034A6") } 
-    static var electricBlue: UIColor { return UIColor(rgba: "#7DF9FF") } 
-    static var electricCrimson: UIColor { return UIColor(rgba: "#FF003F") } 
-    static var electricCyan: UIColor { return UIColor(rgba: "#00FFFF") } 
-    static var electricGreen: UIColor { return UIColor(rgba: "#00FF00") } 
-    static var electricIndigo: UIColor { return UIColor(rgba: "#6F00FF") } 
-    static var electricLavender: UIColor { return UIColor(rgba: "#F4BBFF") } 
-    static var electricLime: UIColor { return UIColor(rgba: "#CCFF00") } 
-    static var electricPurple: UIColor { return UIColor(rgba: "#BF00FF") } 
-    static var electricUltramarine: UIColor { return UIColor(rgba: "#3F00FF") } 
-    static var electricViovar: UIColor { return UIColor(rgba: "#8F00FF") } 
-    static var electricYellow: UIColor { return UIColor(rgba: "#FFFF33") } 
-    static var emerald: UIColor { return UIColor(rgba: "#50C878") } 
-    static var eminence: UIColor { return UIColor(rgba: "#6C3082") } 
-    static var englishGreen: UIColor { return UIColor(rgba: "#1B4D3E") } 
-    static var englishLavender: UIColor { return UIColor(rgba: "#B48395") } 
-    static var englishRed: UIColor { return UIColor(rgba: "#AB4B52") } 
-    static var englishVermillion: UIColor { return UIColor(rgba: "#CC474B") } 
-    static var englishViovar: UIColor { return UIColor(rgba: "#563C5C") } 
-    static var etonBlue: UIColor { return UIColor(rgba: "#96C8A2") } 
-    static var eucalyptus: UIColor { return UIColor(rgba: "#44D7A8") } 
-    static var fallow: UIColor { return UIColor(rgba: "#C19A6B") } 
-    static var faluRed: UIColor { return UIColor(rgba: "#801818") } 
-    static var fandango: UIColor { return UIColor(rgba: "#B53389") } 
-    static var fandangoPink: UIColor { return UIColor(rgba: "#DE5285") } 
-    static var fashionFuchsia: UIColor { return UIColor(rgba: "#F400A1") } 
-    static var fawn: UIColor { return UIColor(rgba: "#E5AA70") } 
-    static var feldgrau: UIColor { return UIColor(rgba: "#4D5D53") } 
-    static var feldspar: UIColor { return UIColor(rgba: "#FDD5B1") } 
-    static var fernGreen: UIColor { return UIColor(rgba: "#4F7942") } 
-    static var ferrariRed: UIColor { return UIColor(rgba: "#FF2800") } 
-    static var fieldDrab: UIColor { return UIColor(rgba: "#6C541E") } 
-    static var fieryRose: UIColor { return UIColor(rgba: "#FF5470") } 
-    static var firebrick: UIColor { return UIColor(rgba: "#B22222") } 
-    static var fireEngineRed: UIColor { return UIColor(rgba: "#CE2029") } 
-    static var flame: UIColor { return UIColor(rgba: "#E25822") } 
-    static var flamingoPink: UIColor { return UIColor(rgba: "#FC8EAC") } 
-    static var flattery: UIColor { return UIColor(rgba: "#6B4423") } 
-    static var flavescent: UIColor { return UIColor(rgba: "#F7E98E") } 
-    static var flax: UIColor { return UIColor(rgba: "#EEDC82") } 
-    static var flirt: UIColor { return UIColor(rgba: "#A2006D") } 
-    static var floralWhite: UIColor { return UIColor(rgba: "#FFFAF0") } 
-    static var fluorescentOrange: UIColor { return UIColor(rgba: "#FFBF00") } 
-    static var fluorescentPink: UIColor { return UIColor(rgba: "#FF1493") } 
-    static var fluorescentYellow: UIColor { return UIColor(rgba: "#CCFF00") } 
-    static var folly: UIColor { return UIColor(rgba: "#FF004F") } 
-    static var forestGreenTraditional: UIColor { return UIColor(rgba: "#014421") } 
-    static var forestGreenWeb: UIColor { return UIColor(rgba: "#228B22") } 
-    static var frenchBeige: UIColor { return UIColor(rgba: "#A67B5B") } 
-    static var frenchBistre: UIColor { return UIColor(rgba: "#856D4D") } 
-    static var frenchBlue: UIColor { return UIColor(rgba: "#0072BB") } 
-    static var frenchFuchsia: UIColor { return UIColor(rgba: "#FD3F92") } 
-    static var frenchLilac: UIColor { return UIColor(rgba: "#86608E") } 
-    static var frenchLime: UIColor { return UIColor(rgba: "#9EFD38") } 
-    static var frenchMauve: UIColor { return UIColor(rgba: "#D473D4") } 
-    static var frenchPink: UIColor { return UIColor(rgba: "#FD6C9E") } 
-    static var frenchPlum: UIColor { return UIColor(rgba: "#811453") } 
-    static var frenchPuce: UIColor { return UIColor(rgba: "#4E1609") } 
-    static var frenchRaspberry: UIColor { return UIColor(rgba: "#C72C48") } 
-    static var frenchRose: UIColor { return UIColor(rgba: "#F64A8A") } 
-    static var frenchSkyBlue: UIColor { return UIColor(rgba: "#77B5FE") } 
-    static var frenchViovar: UIColor { return UIColor(rgba: "#8806CE") } 
-    static var frenchWine: UIColor { return UIColor(rgba: "#AC1E44") } 
-    static var freshAir: UIColor { return UIColor(rgba: "#A6E7FF") } 
-    static var frostbite: UIColor { return UIColor(rgba: "#E936A7") } 
-    static var fuchsia: UIColor { return UIColor(rgba: "#FF00FF") } 
-    static var fuchsiaCrayola: UIColor { return UIColor(rgba: "#C154C1") } 
-    static var fuchsiaPink: UIColor { return UIColor(rgba: "#FF77FF") } 
-    static var fuchsiaPurple: UIColor { return UIColor(rgba: "#CC397B") } 
-    static var fuchsiaRose: UIColor { return UIColor(rgba: "#C74375") } 
-    static var fulvous: UIColor { return UIColor(rgba: "#E48400") } 
-    static var fuzzyWuzzy: UIColor { return UIColor(rgba: "#CC6666") } 
-    static var gainsboro: UIColor { return UIColor(rgba: "#DCDCDC") } 
-    static var gamboge: UIColor { return UIColor(rgba: "#E49B0F") } 
-    static var gambogeOrangeBrown: UIColor { return UIColor(rgba: "#996600") } 
-    static var gargoyleGas: UIColor { return UIColor(rgba: "#FFDF46") } 
-    static var genericViridian: UIColor { return UIColor(rgba: "#007F66") } 
-    static var ghostWhite: UIColor { return UIColor(rgba: "#F8F8FF") } 
-    static var giantsClub: UIColor { return UIColor(rgba: "#B05C52") } 
-    static var giantsOrange: UIColor { return UIColor(rgba: "#FE5A1D") } 
-    static var ginger: UIColor { return UIColor(rgba: "#B06500") } 
-    static var glaucous: UIColor { return UIColor(rgba: "#6082B6") } 
-    static var glitter: UIColor { return UIColor(rgba: "#E6E8FA") } 
-    static var glossyGrape: UIColor { return UIColor(rgba: "#AB92B3") } 
-    static var gOGreen: UIColor { return UIColor(rgba: "#00AB66") } 
-    static var goldMetallic: UIColor { return UIColor(rgba: "#D4AF37") } 
-    static var goldWebGolden: UIColor { return UIColor(rgba: "#FFD700") } 
-    static var goldFusion: UIColor { return UIColor(rgba: "#85754E") } 
-    static var goldenBrown: UIColor { return UIColor(rgba: "#996515") } 
-    static var goldenPoppy: UIColor { return UIColor(rgba: "#FCC200") } 
-    static var goldenYellow: UIColor { return UIColor(rgba: "#FFDF00") } 
-    static var goldenrod: UIColor { return UIColor(rgba: "#DAA520") } 
-    static var graniteGray: UIColor { return UIColor(rgba: "#676767") } 
-    static var grannySmithApple: UIColor { return UIColor(rgba: "#A8E4A0") } 
-    static var grape: UIColor { return UIColor(rgba: "#6F2DA8") } 
-    static var gray: UIColor { return UIColor(rgba: "#808080") } 
-    static var grayHTMLCSSGray: UIColor { return UIColor(rgba: "#808080") } 
-    static var grayX11Gray: UIColor { return UIColor(rgba: "#BEBEBE") } 
-    static var grayAsparagus: UIColor { return UIColor(rgba: "#465945") } 
-    static var grayBlue: UIColor { return UIColor(rgba: "#8C92AC") } 
-    static var greenColorWheelX11Green: UIColor { return UIColor(rgba: "#00FF00") } 
-    static var greenCrayola: UIColor { return UIColor(rgba: "#1CAC78") } 
-    static var greenHTMLCSSColor: UIColor { return UIColor(rgba: "#008000") } 
-    static var greenMunsell: UIColor { return UIColor(rgba: "#00A877") } 
-    static var greenNCS: UIColor { return UIColor(rgba: "#009F6B") } 
-    static var greenPantone: UIColor { return UIColor(rgba: "#00AD43") } 
-    static var greenPigment: UIColor { return UIColor(rgba: "#00A550") } 
-    static var greenRYB: UIColor { return UIColor(rgba: "#66B032") } 
-    static var greenBlue: UIColor { return UIColor(rgba: "#1164B4") } 
-    static var greenCyan: UIColor { return UIColor(rgba: "#009966") } 
-    static var greenLizard: UIColor { return UIColor(rgba: "#A7F432") } 
-    static var greenSheen: UIColor { return UIColor(rgba: "#6EAEA1") } 
-    static var greenYellow: UIColor { return UIColor(rgba: "#ADFF2F") } 
-    static var grizzly: UIColor { return UIColor(rgba: "#885818") } 
-    static var grullo: UIColor { return UIColor(rgba: "#A99A86") } 
-    static var guppieGreen: UIColor { return UIColor(rgba: "#00FF7F") } 
-    static var gunmetal: UIColor { return UIColor(rgba: "#2a3439") } 
-    static var halayàÚbe: UIColor { return UIColor(rgba: "#663854") } 
-    static var hanBlue: UIColor { return UIColor(rgba: "#446CCF") } 
-    static var hanPurple: UIColor { return UIColor(rgba: "#5218FA") } 
-    static var hansaYellow: UIColor { return UIColor(rgba: "#E9D66B") } 
-    static var harlequin: UIColor { return UIColor(rgba: "#3FFF00") } 
-    static var harlequinGreen: UIColor { return UIColor(rgba: "#46CB18") } 
-    static var harvardCrimson: UIColor { return UIColor(rgba: "#C90016") }
-    static var harvestGold: UIColor { return UIColor(rgba: "#DA9100") } 
-    static var heartGold: UIColor { return UIColor(rgba: "#808000") } 
-    static var heatWave: UIColor { return UIColor(rgba: "#FF7A00") } 
-    static var heidelbergRed: UIColor { return UIColor(rgba: "#960018") }
-    static var heliotrope: UIColor { return UIColor(rgba: "#DF73FF") } 
-    static var heliotropeGray: UIColor { return UIColor(rgba: "#AA98A9") } 
-    static var heliotropeMagenta: UIColor { return UIColor(rgba: "#AA00BB") } 
-    static var hollywoodCerise: UIColor { return UIColor(rgba: "#F400A1") } 
-    static var honeydew: UIColor { return UIColor(rgba: "#F0FFF0") } 
-    static var honoluluBlue: UIColor { return UIColor(rgba: "#006DB0") } 
-    static var hookersGreen: UIColor { return UIColor(rgba: "#49796B") } 
-    static var hotMagenta: UIColor { return UIColor(rgba: "#FF1DCE") } 
-    static var hotPink: UIColor { return UIColor(rgba: "#FF69B4") } 
-    static var hunterGreen: UIColor { return UIColor(rgba: "#355E3B") } 
-    static var iceberg: UIColor { return UIColor(rgba: "#71A6D2") } 
-    static var icterine: UIColor { return UIColor(rgba: "#FCF75E") } 
-    static var iguanaGreen: UIColor { return UIColor(rgba: "#71BC78") } 
-    static var illuminatingEmerald: UIColor { return UIColor(rgba: "#319177") } 
-    static var imperial: UIColor { return UIColor(rgba: "#602F6B") } 
-    static var imperialBlue: UIColor { return UIColor(rgba: "#002395") } 
-    static var imperialPurple: UIColor { return UIColor(rgba: "#66023C") } 
-    static var imperialRed: UIColor { return UIColor(rgba: "#ED2939") } 
-    static var inchworm: UIColor { return UIColor(rgba: "#B2EC5D") } 
-    static var independence: UIColor { return UIColor(rgba: "#4C516D") } 
-    static var indiaGreen: UIColor { return UIColor(rgba: "#138808") } 
-    static var indianRed: UIColor { return UIColor(rgba: "#CD5C5C") } 
-    static var indianYellow: UIColor { return UIColor(rgba: "#E3A857") } 
-    static var indigo: UIColor { return UIColor(rgba: "#4B0082") } 
-    static var indigoDye: UIColor { return UIColor(rgba: "#091F92") } 
-    static var indigoWeb: UIColor { return UIColor(rgba: "#4B0082") } 
-    static var infraRed: UIColor { return UIColor(rgba: "#FF496C") } 
-    static var interdimensionalBlue: UIColor { return UIColor(rgba: "#360CCC") } 
-    static var internationalKleinBlue: UIColor { return UIColor(rgba: "#002FA7") } 
-    static var internationalOrangeAerospace: UIColor { return UIColor(rgba: "#FF4F00") } 
-    static var internationalOrangeEngineering: UIColor { return UIColor(rgba: "#BA160C") } 
-    static var internationalOrangeGoldenGateBridge: UIColor { return UIColor(rgba: "#C0362C") } 
-    static var iris: UIColor { return UIColor(rgba: "#5A4FCF") } 
-    static var irresistible: UIColor { return UIColor(rgba: "#B3446C") } 
-    static var isabelline: UIColor { return UIColor(rgba: "#F4F0EC") } 
-    static var islamicGreen: UIColor { return UIColor(rgba: "#009000") } 
-    static var italianSkyBlue: UIColor { return UIColor(rgba: "#B2FFFF") } 
-    static var ivory: UIColor { return UIColor(rgba: "#FFFFF0") } 
-    static var jade: UIColor { return UIColor(rgba: "#00A86B") } 
-    static var japaneseCarmine: UIColor { return UIColor(rgba: "#9D2933") } 
-    static var japaneseIndigo: UIColor { return UIColor(rgba: "#264348") } 
-    static var japaneseViovar: UIColor { return UIColor(rgba: "#5B3256") } 
-    static var jasmine: UIColor { return UIColor(rgba: "#F8DE7E") } 
-    static var jasper: UIColor { return UIColor(rgba: "#D73B3E") } 
-    static var jazzberryJam: UIColor { return UIColor(rgba: "#A50B5E") } 
-    static var jellyBean: UIColor { return UIColor(rgba: "#DA614E") } 
-    static var jet: UIColor { return UIColor(rgba: "#343434") } 
-    static var jonquil: UIColor { return UIColor(rgba: "#F4CA16") } 
-    static var jordyBlue: UIColor { return UIColor(rgba: "#8AB9F1") } 
-    static var juneBud: UIColor { return UIColor(rgba: "#BDDA57") } 
-    static var jungleGreen: UIColor { return UIColor(rgba: "#29AB87") } 
-    static var kellyGreen: UIColor { return UIColor(rgba: "#4CBB17") } 
-    static var kenyanCopper: UIColor { return UIColor(rgba: "#7C1C05") } 
-    static var keppel: UIColor { return UIColor(rgba: "#3AB09E") } 
-    static var keyLime: UIColor { return UIColor(rgba: "#E8F48C") } 
-    static var khakiHTMLCSSKhaki: UIColor { return UIColor(rgba: "#C3B091") } 
-    static var khakiX11LightKhaki: UIColor { return UIColor(rgba: "#F0E68C") } 
-    static var kiwi: UIColor { return UIColor(rgba: "#8EE53F") } 
-    static var kobe: UIColor { return UIColor(rgba: "#882D17") } 
-    static var kobi: UIColor { return UIColor(rgba: "#E79FC4") } 
-    static var kobicha: UIColor { return UIColor(rgba: "#6B4423") } 
-    static var kombuGreen: UIColor { return UIColor(rgba: "#354230") } 
-    static var kSUPurple: UIColor { return UIColor(rgba: "#512888") } 
-    static var kUCrimson: UIColor { return UIColor(rgba: "#E8000D") } 
-    static var laSalleGreen: UIColor { return UIColor(rgba: "#087830") } 
-    static var languidLavender: UIColor { return UIColor(rgba: "#D6CADD") } 
-    static var lapisLazuli: UIColor { return UIColor(rgba: "#26619C") } 
-    static var laserLemon: UIColor { return UIColor(rgba: "#FFFF66") } 
-    static var laurelGreen: UIColor { return UIColor(rgba: "#A9BA9D") } 
-    static var lava: UIColor { return UIColor(rgba: "#CF1020") } 
-    static var lavenderFloral: UIColor { return UIColor(rgba: "#B57EDC") } 
-    static var lavenderWeb: UIColor { return UIColor(rgba: "#E6E6FA") } 
-    static var lavenderBlue: UIColor { return UIColor(rgba: "#CCCCFF") } 
-    static var lavenderBlush: UIColor { return UIColor(rgba: "#FFF0F5") } 
-    static var lavenderGray: UIColor { return UIColor(rgba: "#C4C3D0") } 
-    static var lavenderIndigo: UIColor { return UIColor(rgba: "#9457EB") } 
-    static var lavenderMagenta: UIColor { return UIColor(rgba: "#EE82EE") } 
-    static var lavenderMist: UIColor { return UIColor(rgba: "#E6E6FA") } 
-    static var lavenderPink: UIColor { return UIColor(rgba: "#FBAED2") } 
-    static var lavenderPurple: UIColor { return UIColor(rgba: "#967BB6") } 
-    static var lavenderRose: UIColor { return UIColor(rgba: "#FBA0E3") } 
-    static var lawnGreen: UIColor { return UIColor(rgba: "#7CFC00") } 
-    static var lemon: UIColor { return UIColor(rgba: "#FFF700") } 
-    static var lemonChiffon: UIColor { return UIColor(rgba: "#FFFACD") } 
-    static var lemonCurry: UIColor { return UIColor(rgba: "#CCA01D") } 
-    static var lemonGlacier: UIColor { return UIColor(rgba: "#FDFF00") } 
-    static var lemonLime: UIColor { return UIColor(rgba: "#E3FF00") } 
-    static var lemonMeringue: UIColor { return UIColor(rgba: "#F6EABE") } 
-    static var lemonYellow: UIColor { return UIColor(rgba: "#FFF44F") } 
-    static var licorice: UIColor { return UIColor(rgba: "#1A1110") } 
-    static var liberty: UIColor { return UIColor(rgba: "#545AA7") } 
-    static var lightApricot: UIColor { return UIColor(rgba: "#FDD5B1") } 
-    static var lightBlue: UIColor { return UIColor(rgba: "#ADD8E6") } 
-    static var lightBrown: UIColor { return UIColor(rgba: "#B5651D") } 
-    static var lightCarminePink: UIColor { return UIColor(rgba: "#E66771") } 
-    static var lightCobaltBlue: UIColor { return UIColor(rgba: "#88ACE0") } 
-    static var lightCoral: UIColor { return UIColor(rgba: "#F08080") } 
-    static var lightCornflowerBlue: UIColor { return UIColor(rgba: "#93CCEA") } 
-    static var lightCrimson: UIColor { return UIColor(rgba: "#F56991") } 
-    static var lightCyan: UIColor { return UIColor(rgba: "#E0FFFF") } 
-    static var lightDeepPink: UIColor { return UIColor(rgba: "#FF5CCD") } 
-    static var lightFrenchBeige: UIColor { return UIColor(rgba: "#C8AD7F") } 
-    static var lightFuchsiaPink: UIColor { return UIColor(rgba: "#F984EF") } 
-    static var lightGoldenrodYellow: UIColor { return UIColor(rgba: "#FAFAD2") } 
-    static var lightGray: UIColor { return UIColor(rgba: "#D3D3D3") } 
-    static var lightGrayishMagenta: UIColor { return UIColor(rgba: "#CC99CC") } 
-    static var lightGreen: UIColor { return UIColor(rgba: "#90EE90") } 
-    static var lightHotPink: UIColor { return UIColor(rgba: "#FFB3DE") } 
-    static var lightKhaki: UIColor { return UIColor(rgba: "#F0E68C") } 
-    static var lightMediumOrchid: UIColor { return UIColor(rgba: "#D39BCB") } 
-    static var lightMossGreen: UIColor { return UIColor(rgba: "#ADDFAD") } 
-    static var lightOrange: UIColor { return UIColor(rgba: "#FED8B1") } 
-    static var lightOrchid: UIColor { return UIColor(rgba: "#E6A8D7") } 
-    static var lightPastelPurple: UIColor { return UIColor(rgba: "#B19CD9") } 
-    static var lightPink: UIColor { return UIColor(rgba: "#FFB6C1") } 
-    static var lightRedOchre: UIColor { return UIColor(rgba: "#E97451") } 
-    static var lightSalmon: UIColor { return UIColor(rgba: "#FFA07A") } 
-    static var lightSalmonPink: UIColor { return UIColor(rgba: "#FF9999") } 
-    static var lightSeaGreen: UIColor { return UIColor(rgba: "#20B2AA") } 
-    static var lightSkyBlue: UIColor { return UIColor(rgba: "#87CEFA") } 
-    static var lightSlateGray: UIColor { return UIColor(rgba: "#778899") } 
-    static var lightSteelBlue: UIColor { return UIColor(rgba: "#B0C4DE") } 
-    static var lightTaupe: UIColor { return UIColor(rgba: "#B38B6D") } 
-    static var lightThulianPink: UIColor { return UIColor(rgba: "#E68FAC") } 
-    static var lightYellow: UIColor { return UIColor(rgba: "#FFFFE0") } 
-    static var lilac: UIColor { return UIColor(rgba: "#C8A2C8") } 
-    static var lilacLuster: UIColor { return UIColor(rgba: "#AE98AA") } 
-    static var limeColorWheel: UIColor { return UIColor(rgba: "#BFFF00") } 
-    static var limeWebX11Green: UIColor { return UIColor(rgba: "#00FF00") } 
-    static var limeGreen: UIColor { return UIColor(rgba: "#32CD32") } 
-    static var limerick: UIColor { return UIColor(rgba: "#9DC209") } 
-    static var lincolnGreen: UIColor { return UIColor(rgba: "#195905") } 
-    static var linen: UIColor { return UIColor(rgba: "#FAF0E6") } 
-    static var loeen: UIColor { return UIColor(rgba: "#15F2FD") }
-    static var liseranPurple: UIColor { return UIColor(rgba: "#DE6FA1") } 
-    static var littleBoyBlue: UIColor { return UIColor(rgba: "#6CA0DC") } 
-    static var liver: UIColor { return UIColor(rgba: "#674C47") } 
-    static var liverDogs: UIColor { return UIColor(rgba: "#B86D29") } 
-    static var liverOrgan: UIColor { return UIColor(rgba: "#6C2E1F") } 
-    static var liverChestnut: UIColor { return UIColor(rgba: "#987456") } 
-    static var livid: UIColor { return UIColor(rgba: "#6699CC") } 
-    static var lumber: UIColor { return UIColor(rgba: "#FFE4CD") } 
-    static var lust: UIColor { return UIColor(rgba: "#E62020") } 
-    static var maastrichtBlue: UIColor { return UIColor(rgba: "#001C3D") } 
-    static var macaroniAndCheese: UIColor { return UIColor(rgba: "#FFBD88") } 
-    static var madderLake: UIColor { return UIColor(rgba: "#CC3336") } 
-    static var magenta: UIColor { return UIColor(rgba: "#FF00FF") } 
-    static var magentaCrayola: UIColor { return UIColor(rgba: "#FF55A3") } 
-    static var magentaDye: UIColor { return UIColor(rgba: "#CA1F7B") } 
-    static var magentaPantone: UIColor { return UIColor(rgba: "#D0417E") } 
-    static var magentaProcess: UIColor { return UIColor(rgba: "#FF0090") } 
-    static var magentaHaze: UIColor { return UIColor(rgba: "#9F4576") } 
-    static var magentaPink: UIColor { return UIColor(rgba: "#CC338B") } 
-    static var magicMint: UIColor { return UIColor(rgba: "#AAF0D1") } 
-    static var magicPotion: UIColor { return UIColor(rgba: "#FF4466") } 
-    static var magnolia: UIColor { return UIColor(rgba: "#F8F4FF") } 
-    static var mahogany: UIColor { return UIColor(rgba: "#C04000") } 
-    static var maize: UIColor { return UIColor(rgba: "#FBEC5D") } 
-    static var majorelleBlue: UIColor { return UIColor(rgba: "#6050DC") } 
-    static var malachite: UIColor { return UIColor(rgba: "#0BDA51") } 
-    static var manatee: UIColor { return UIColor(rgba: "#979AAA") } 
-    static var mandarin: UIColor { return UIColor(rgba: "#F37A48") } 
-    static var mangoTango: UIColor { return UIColor(rgba: "#FF8243") } 
-    static var mantis: UIColor { return UIColor(rgba: "#74C365") } 
-    static var mardiGras: UIColor { return UIColor(rgba: "#880085") } 
-    static var marigold: UIColor { return UIColor(rgba: "#EAA221") } 
-    static var maroonCrayola: UIColor { return UIColor(rgba: "#C32148") } 
-    static var maroonHTMLCSS: UIColor { return UIColor(rgba: "#800000") } 
-    static var maroonX11: UIColor { return UIColor(rgba: "#B03060") } 
-    static var mauve: UIColor { return UIColor(rgba: "#E0B0FF") } 
-    static var mauveTaupe: UIColor { return UIColor(rgba: "#915F6D") } 
-    static var mauvelous: UIColor { return UIColor(rgba: "#EF98AA") } 
-    static var maximumBlue: UIColor { return UIColor(rgba: "#47ABCC") } 
-    static var maximumBlueGreen: UIColor { return UIColor(rgba: "#30BFBF") } 
-    static var maximumBluePurple: UIColor { return UIColor(rgba: "#ACACE6") } 
-    static var maximumGreen: UIColor { return UIColor(rgba: "#5E8C31") } 
-    static var maximumGreenYellow: UIColor { return UIColor(rgba: "#D9E650") } 
-    static var maximumPurple: UIColor { return UIColor(rgba: "#733380") } 
-    static var maximumRed: UIColor { return UIColor(rgba: "#D92121") } 
-    static var maximumRedPurple: UIColor { return UIColor(rgba: "#A63A79") } 
-    static var maximumYellow: UIColor { return UIColor(rgba: "#FAFA37") } 
-    static var maximumYellowRed: UIColor { return UIColor(rgba: "#F2BA49") } 
-    static var mayGreen: UIColor { return UIColor(rgba: "#4C9141") } 
-    static var mayaBlue: UIColor { return UIColor(rgba: "#73C2FB") } 
-    static var meatBrown: UIColor { return UIColor(rgba: "#E5B73B") } 
-    static var mediumAquamarine: UIColor { return UIColor(rgba: "#66DDAA") } 
-    static var mediumBlue: UIColor { return UIColor(rgba: "#0000CD") } 
-    static var mediumCandyAppleRed: UIColor { return UIColor(rgba: "#E2062C") } 
-    static var mediumCarmine: UIColor { return UIColor(rgba: "#AF4035") } 
-    static var mediumChampagne: UIColor { return UIColor(rgba: "#F3E5AB") } 
-    static var mediumElectricBlue: UIColor { return UIColor(rgba: "#035096") } 
-    static var mediumJungleGreen: UIColor { return UIColor(rgba: "#1C352D") } 
-    static var mediumLavenderMagenta: UIColor { return UIColor(rgba: "#DDA0DD") } 
-    static var mediumOrchid: UIColor { return UIColor(rgba: "#BA55D3") } 
-    static var mediumPersianBlue: UIColor { return UIColor(rgba: "#0067A5") } 
-    static var mediumPurple: UIColor { return UIColor(rgba: "#9370DB") } 
-    static var mediumRedViovar: UIColor { return UIColor(rgba: "#BB3385") } 
-    static var mediumRuby: UIColor { return UIColor(rgba: "#AA4069") } 
-    static var mediumSeaGreen: UIColor { return UIColor(rgba: "#3CB371") } 
-    static var mediumSkyBlue: UIColor { return UIColor(rgba: "#80DAEB") } 
-    static var mediumSlateBlue: UIColor { return UIColor(rgba: "#7B68EE") } 
-    static var mediumSpringBud: UIColor { return UIColor(rgba: "#C9DC87") } 
-    static var mediumSpringGreen: UIColor { return UIColor(rgba: "#00FA9A") } 
-    static var mediumTaupe: UIColor { return UIColor(rgba: "#674C47") } 
-    static var mediumTurquoise: UIColor { return UIColor(rgba: "#48D1CC") } 
-    static var mediumTuscanRed: UIColor { return UIColor(rgba: "#79443B") } 
-    static var mediumVermilion: UIColor { return UIColor(rgba: "#D9603B") } 
-    static var mediumViovarRed: UIColor { return UIColor(rgba: "#C71585") } 
-    static var mellowApricot: UIColor { return UIColor(rgba: "#F8B878") } 
-    static var mellowYellow: UIColor { return UIColor(rgba: "#F8DE7E") } 
-    static var melon: UIColor { return UIColor(rgba: "#FDBCB4") } 
-    static var metallicSeaweed: UIColor { return UIColor(rgba: "#0A7E8C") } 
-    static var metallicSunburst: UIColor { return UIColor(rgba: "#9C7C38") } 
-    static var mexicanPink: UIColor { return UIColor(rgba: "#E4007C") } 
-    static var middleBlue: UIColor { return UIColor(rgba: "#7ED4E6") } 
-    static var middleBlueGreen: UIColor { return UIColor(rgba: "#8DD9CC") } 
-    static var middleBluePurple: UIColor { return UIColor(rgba: "#8B72BE") } 
-    static var middleGreen: UIColor { return UIColor(rgba: "#4D8C57") } 
-    static var middleGreenYellow: UIColor { return UIColor(rgba: "#ACBF60") } 
-    static var middlePurple: UIColor { return UIColor(rgba: "#D982B5") } 
-    static var middleRed: UIColor { return UIColor(rgba: "#E58E73") } 
-    static var middleRedPurple: UIColor { return UIColor(rgba: "#A55353") } 
-    static var middleYellow: UIColor { return UIColor(rgba: "#FFEB00") } 
-    static var middleYellowRed: UIColor { return UIColor(rgba: "#ECB176") } 
-    static var midnight: UIColor { return UIColor(rgba: "#702670") } 
-    static var midnightBlue: UIColor { return UIColor(rgba: "#191970") } 
-    static var midnightGreenEagleGreen: UIColor { return UIColor(rgba: "#004953") } 
-    static var mikadoYellow: UIColor { return UIColor(rgba: "#FFC40C") } 
-    static var milk: UIColor { return UIColor(rgba: "#FDFFF5") } 
-    static var mimiPink: UIColor { return UIColor(rgba: "#FFDAE9") } 
-    static var mindaro: UIColor { return UIColor(rgba: "#E3F988") } 
-    static var ming: UIColor { return UIColor(rgba: "#36747D") } 
-    static var minionYellow: UIColor { return UIColor(rgba: "#F5E050") } 
-    static var mint: UIColor { return UIColor(rgba: "#3EB489") } 
-    static var mintCream: UIColor { return UIColor(rgba: "#F5FFFA") } 
-    static var mintGreen: UIColor { return UIColor(rgba: "#98FF98") } 
-    static var mistyMoss: UIColor { return UIColor(rgba: "#BBB477") } 
-    static var mistyRose: UIColor { return UIColor(rgba: "#FFE4E1") } 
-    static var moccasin: UIColor { return UIColor(rgba: "#FAEBD7") } 
-    static var modeBeige: UIColor { return UIColor(rgba: "#967117") } 
-    static var moonstoneBlue: UIColor { return UIColor(rgba: "#73A9C2") } 
-    static var mordantRed19: UIColor { return UIColor(rgba: "#AE0C00") } 
-    static var morningBlue: UIColor { return UIColor(rgba: "#8DA399") } 
-    static var mossGreen: UIColor { return UIColor(rgba: "#8A9A5B") } 
-    static var mountainMeadow: UIColor { return UIColor(rgba: "#30BA8F") } 
-    static var mountbattenPink: UIColor { return UIColor(rgba: "#997A8D") } 
-    static var mSUGreen: UIColor { return UIColor(rgba: "#18453B") } 
-    static var mughalGreen: UIColor { return UIColor(rgba: "#306030") } 
-    static var mulberry: UIColor { return UIColor(rgba: "#C54B8C") } 
-    static var mummysTomb: UIColor { return UIColor(rgba: "#828E84") } 
-    static var mustard: UIColor { return UIColor(rgba: "#FFDB58") } 
-    static var myrtleGreen: UIColor { return UIColor(rgba: "#317873") } 
-    static var mystic: UIColor { return UIColor(rgba: "#D65282") } 
-    static var mysticMaroon: UIColor { return UIColor(rgba: "#AD4379") } 
-    static var nadeshikoPink: UIColor { return UIColor(rgba: "#F6ADC6") } 
-    static var napierGreen: UIColor { return UIColor(rgba: "#2A8000") } 
-    static var naplesYellow: UIColor { return UIColor(rgba: "#FADA5E") } 
-    static var navajoWhite: UIColor { return UIColor(rgba: "#FFDEAD") } 
-    static var navy: UIColor { return UIColor(rgba: "#000080") } 
-    static var navyPurple: UIColor { return UIColor(rgba: "#9457EB") } 
-    static var neonCarrot: UIColor { return UIColor(rgba: "#FFA343") } 
-    static var neonFuchsia: UIColor { return UIColor(rgba: "#FE4164") } 
-    static var neonGreen: UIColor { return UIColor(rgba: "#39FF14") } 
-    static var newCar: UIColor { return UIColor(rgba: "#214FC6") } 
-    static var newYorkPink: UIColor { return UIColor(rgba: "#D7837F") } 
-    static var nickel: UIColor { return UIColor(rgba: "#727472") } 
-    static var nonPhotoBlue: UIColor { return UIColor(rgba: "#A4DDED") } 
-    static var northTexasGreen: UIColor { return UIColor(rgba: "#059033") } 
-    static var nyanza: UIColor { return UIColor(rgba: "#E9FFDB") } 
-    static var oceanBlue: UIColor { return UIColor(rgba: "#4F42B5") } 
-    static var oceanBoatBlue: UIColor { return UIColor(rgba: "#0077BE") } 
-    static var oceanGreen: UIColor { return UIColor(rgba: "#48BF91") } 
-    static var ochre: UIColor { return UIColor(rgba: "#CC7722") } 
-    static var officeGreen: UIColor { return UIColor(rgba: "#008000") } 
-    static var ogreOdor: UIColor { return UIColor(rgba: "#FD5240") } 
-    static var oldBurgundy: UIColor { return UIColor(rgba: "#43302E") } 
-    static var oldGold: UIColor { return UIColor(rgba: "#CFB53B") } 
-    static var oldHeliotrope: UIColor { return UIColor(rgba: "#563C5C") } 
-    static var oldLace: UIColor { return UIColor(rgba: "#FDF5E6") } 
-    static var oldLavender: UIColor { return UIColor(rgba: "#796878") } 
-    static var oldMauve: UIColor { return UIColor(rgba: "#673147") } 
-    static var oldMossGreen: UIColor { return UIColor(rgba: "#867E36") } 
-    static var oldRose: UIColor { return UIColor(rgba: "#C08081") } 
-    static var oldSilver: UIColor { return UIColor(rgba: "#848482") } 
-    static var olive: UIColor { return UIColor(rgba: "#808000") } 
-    static var oliveDrab3: UIColor { return UIColor(rgba: "#6B8E23") }
-    static var oliveDrab7: UIColor { return UIColor(rgba: "#3C341F") }
-    static var olivine: UIColor { return UIColor(rgba: "#9AB973") } 
-    static var onyx: UIColor { return UIColor(rgba: "#353839") } 
-    static var operaMauve: UIColor { return UIColor(rgba: "#B784A7") } 
-    static var orangeColorWheel: UIColor { return UIColor(rgba: "#FF7F00") } 
-    static var orangeCrayola: UIColor { return UIColor(rgba: "#FF7538") } 
-    static var orangePantone: UIColor { return UIColor(rgba: "#FF5800") } 
-    static var orangeRYB: UIColor { return UIColor(rgba: "#FB9902") } 
-    static var orangeWeb: UIColor { return UIColor(rgba: "#FFA500") } 
-    static var orangePeel: UIColor { return UIColor(rgba: "#FF9F00") } 
-    static var orangeRed: UIColor { return UIColor(rgba: "#FF4500") } 
-    static var orangeSoda: UIColor { return UIColor(rgba: "#FA5B3D") } 
-    static var orangeYellow: UIColor { return UIColor(rgba: "#F8D568") } 
-    static var orchid: UIColor { return UIColor(rgba: "#DA70D6") } 
-    static var orchidPink: UIColor { return UIColor(rgba: "#F2BDCD") } 
-    static var oriolesOrange: UIColor { return UIColor(rgba: "#FB4F14") } 
-    static var otterBrown: UIColor { return UIColor(rgba: "#654321") } 
-    static var outerSpace: UIColor { return UIColor(rgba: "#414A4C") } 
-    static var outrageousOrange: UIColor { return UIColor(rgba: "#FF6E4A") } 
-    static var oxfordBlue: UIColor { return UIColor(rgba: "#002147") } 
-    static var oUCrimsonRed: UIColor { return UIColor(rgba: "#990000") } 
-    static var pacificBlue: UIColor { return UIColor(rgba: "#1CA9C9") } 
-    static var pakistanGreen: UIColor { return UIColor(rgba: "#006600") } 
-    static var palatinateBlue: UIColor { return UIColor(rgba: "#273BE2") } 
-    static var palatinatePurple: UIColor { return UIColor(rgba: "#682860") } 
-    static var paleAqua: UIColor { return UIColor(rgba: "#BCD4E6") } 
-    static var paleBlue: UIColor { return UIColor(rgba: "#AFEEEE") } 
-    static var paleBrown: UIColor { return UIColor(rgba: "#987654") } 
-    static var paleCarmine: UIColor { return UIColor(rgba: "#AF4035") } 
-    static var paleCerulean: UIColor { return UIColor(rgba: "#9BC4E2") } 
-    static var paleChestnut: UIColor { return UIColor(rgba: "#DDADAF") } 
-    static var paleCopper: UIColor { return UIColor(rgba: "#DA8A67") } 
-    static var paleCornflowerBlue: UIColor { return UIColor(rgba: "#ABCDEF") } 
-    static var paleCyan: UIColor { return UIColor(rgba: "#87D3F8") } 
-    static var paleGold: UIColor { return UIColor(rgba: "#E6BE8A") } 
-    static var paleGoldenrod: UIColor { return UIColor(rgba: "#EEE8AA") } 
-    static var paleGreen: UIColor { return UIColor(rgba: "#98FB98") } 
-    static var paleLavender: UIColor { return UIColor(rgba: "#DCD0FF") } 
-    static var paleMagenta: UIColor { return UIColor(rgba: "#F984E5") } 
-    static var paleMagentaPink: UIColor { return UIColor(rgba: "#FF99CC") } 
-    static var palePink: UIColor { return UIColor(rgba: "#FADADD") } 
-    static var palePlum: UIColor { return UIColor(rgba: "#DDA0DD") } 
-    static var paleRedViovar: UIColor { return UIColor(rgba: "#DB7093") } 
-    static var paleRobinEggBlue: UIColor { return UIColor(rgba: "#96DED1") } 
-    static var paleSilver: UIColor { return UIColor(rgba: "#C9C0BB") } 
-    static var paleSpringBud: UIColor { return UIColor(rgba: "#ECEBBD") } 
-    static var pavaraupe: UIColor { return UIColor(rgba: "#BC987E") } 
-    static var pavarurquoise: UIColor { return UIColor(rgba: "#AFEEEE") } 
-    static var paleViovar: UIColor { return UIColor(rgba: "#CC99FF") } 
-    static var paleViovarRed: UIColor { return UIColor(rgba: "#DB7093") } 
-    static var palmLeaf: UIColor { return UIColor(rgba: "#6F9940") } 
-    static var pansyPurple: UIColor { return UIColor(rgba: "#78184A") } 
-    static var paoloVeroneseGreen: UIColor { return UIColor(rgba: "#009B7D") } 
-    static var papayaWhip: UIColor { return UIColor(rgba: "#FFEFD5") } 
-    static var paradisePink: UIColor { return UIColor(rgba: "#E63E62") } 
-    static var parisGreen: UIColor { return UIColor(rgba: "#50C878") } 
-    static var parrotPink: UIColor { return UIColor(rgba: "#D998A0") } 
-    static var pastelBlue: UIColor { return UIColor(rgba: "#AEC6CF") } 
-    static var pastelBrown: UIColor { return UIColor(rgba: "#836953") } 
-    static var pastelGray: UIColor { return UIColor(rgba: "#CFCFC4") } 
-    static var pastelGreen: UIColor { return UIColor(rgba: "#77DD77") } 
-    static var pastelMagenta: UIColor { return UIColor(rgba: "#F49AC2") } 
-    static var pastelOrange: UIColor { return UIColor(rgba: "#FFB347") } 
-    static var pastelPink: UIColor { return UIColor(rgba: "#DEA5A4") } 
-    static var pastelPurple: UIColor { return UIColor(rgba: "#B39EB5") } 
-    static var pastelRed: UIColor { return UIColor(rgba: "#FF6961") } 
-    static var pastelViovar: UIColor { return UIColor(rgba: "#CB99C9") } 
-    static var pastelYellow: UIColor { return UIColor(rgba: "#FDFD96") } 
-    static var patriarch: UIColor { return UIColor(rgba: "#800080") } 
-    static var paynesGrey: UIColor { return UIColor(rgba: "#536878") } 
-    static var peach: UIColor { return UIColor(rgba: "#FFE5B4") }
-    static var peachOrange: UIColor { return UIColor(rgba: "#FFCC99") } 
-    static var peachPuff: UIColor { return UIColor(rgba: "#FFDAB9") } 
-    static var peachYellow: UIColor { return UIColor(rgba: "#FADFAD") } 
-    static var pear: UIColor { return UIColor(rgba: "#D1E231") } 
-    static var pearl: UIColor { return UIColor(rgba: "#EAE0C8") } 
-    static var pearlAqua: UIColor { return UIColor(rgba: "#88D8C0") } 
-    static var pearlyPurple: UIColor { return UIColor(rgba: "#B768A2") } 
-    static var peridot: UIColor { return UIColor(rgba: "#E6E200") } 
-    static var periwinkle: UIColor { return UIColor(rgba: "#CCCCFF") } 
-    static var permanentGeraniumLake: UIColor { return UIColor(rgba: "#E12C2C") } 
-    static var persianBlue: UIColor { return UIColor(rgba: "#1C39BB") } 
-    static var persianGreen: UIColor { return UIColor(rgba: "#00A693") } 
-    static var persianIndigo: UIColor { return UIColor(rgba: "#32127A") } 
-    static var persianOrange: UIColor { return UIColor(rgba: "#D99058") } 
-    static var persianPink: UIColor { return UIColor(rgba: "#F77FBE") } 
-    static var persianPlum: UIColor { return UIColor(rgba: "#701C1C") } 
-    static var persianRed: UIColor { return UIColor(rgba: "#CC3333") } 
-    static var persianRose: UIColor { return UIColor(rgba: "#FE28A2") } 
-    static var persimmon: UIColor { return UIColor(rgba: "#EC5800") } 
-    static var peru: UIColor { return UIColor(rgba: "#CD853F") } 
-    static var pewterBlue: UIColor { return UIColor(rgba: "#8BA8B7") } 
-    static var phlox: UIColor { return UIColor(rgba: "#DF00FF") } 
-    static var phthaloBlue: UIColor { return UIColor(rgba: "#000F89") } 
-    static var phthaloGreen: UIColor { return UIColor(rgba: "#123524") } 
-    static var pictonBlue: UIColor { return UIColor(rgba: "#45B1E8") } 
-    static var pictorialCarmine: UIColor { return UIColor(rgba: "#C30B4E") } 
-    static var piggyPink: UIColor { return UIColor(rgba: "#FDDDE6") } 
-    static var pineGreen: UIColor { return UIColor(rgba: "#01796F") } 
-    static var pineapple: UIColor { return UIColor(rgba: "#563C5C") } 
-    static var pink: UIColor { return UIColor(rgba: "#FFC0CB") } 
-    static var pinkPantone: UIColor { return UIColor(rgba: "#D74894") } 
-    static var pinkFlamingo: UIColor { return UIColor(rgba: "#FC74FD") } 
-    static var pinkLace: UIColor { return UIColor(rgba: "#FFDDF4") } 
-    static var pinkLavender: UIColor { return UIColor(rgba: "#D8B2D1") } 
-    static var pinkOrange: UIColor { return UIColor(rgba: "#FF9966") } 
-    static var pinkPearl: UIColor { return UIColor(rgba: "#E7ACCF") } 
-    static var pinkRaspberry: UIColor { return UIColor(rgba: "#980036") } 
-    static var pinkSherbet: UIColor { return UIColor(rgba: "#F78FA7") } 
-    static var pistachio: UIColor { return UIColor(rgba: "#93C572") } 
-    static var pixiePowder: UIColor { return UIColor(rgba: "#391285") } 
-    static var platinum: UIColor { return UIColor(rgba: "#E5E4E2") } 
-    static var plum: UIColor { return UIColor(rgba: "#8E4585") } 
-    static var plumWeb: UIColor { return UIColor(rgba: "#DDA0DD") } 
-    static var plumpPurple: UIColor { return UIColor(rgba: "#5946B2") } 
-    static var polishedPine: UIColor { return UIColor(rgba: "#5DA493") } 
-    static var pompAndPower: UIColor { return UIColor(rgba: "#86608E") } 
-    static var popstar: UIColor { return UIColor(rgba: "#BE4F62") } 
-    static var portlandOrange: UIColor { return UIColor(rgba: "#FF5A36") } 
-    static var powderBlue: UIColor { return UIColor(rgba: "#B0E0E6") } 
-    static var princessPerfume: UIColor { return UIColor(rgba: "#FF85CF") } 
-    static var princetonOrange: UIColor { return UIColor(rgba: "#F58025") } 
-    static var prune: UIColor { return UIColor(rgba: "#701C1C") } 
-    static var prussianBlue: UIColor { return UIColor(rgba: "#003153") } 
-    static var psychedelicPurple: UIColor { return UIColor(rgba: "#DF00FF") } 
-    static var puce: UIColor { return UIColor(rgba: "#CC8899") } 
-    static var puceRed: UIColor { return UIColor(rgba: "#722F37") } 
-    static var pullmanBrownUPSBrown: UIColor { return UIColor(rgba: "#644117") } 
-    static var pullmanGreen: UIColor { return UIColor(rgba: "#3B331C") } 
-    static var pumpkin: UIColor { return UIColor(rgba: "#FF7518") } 
-    static var purpleHTML: UIColor { return UIColor(rgba: "#800080") } 
-    static var purpleMunsell: UIColor { return UIColor(rgba: "#9F00C5") } 
-    static var purpleX11: UIColor { return UIColor(rgba: "#A020F0") } 
-    static var purpleHeart: UIColor { return UIColor(rgba: "#69359C") } 
-    static var purpleMountainMajesty: UIColor { return UIColor(rgba: "#9678B6") } 
-    static var purpleNavy: UIColor { return UIColor(rgba: "#4E5180") } 
-    static var purplePizzazz: UIColor { return UIColor(rgba: "#FE4EDA") } 
-    static var purplePlum: UIColor { return UIColor(rgba: "#9C51B6") } 
-    static var purpvaraupe: UIColor { return UIColor(rgba: "#50404D") } 
-    static var purpureus: UIColor { return UIColor(rgba: "#9A4EAE") } 
-    static var quartz: UIColor { return UIColor(rgba: "#51484F") } 
-    static var queenBlue: UIColor { return UIColor(rgba: "#436B95") } 
-    static var queenPink: UIColor { return UIColor(rgba: "#E8CCD7") } 
-    static var quickSilver: UIColor { return UIColor(rgba: "#A6A6A6") } 
-    static var quinacridoneMagenta: UIColor { return UIColor(rgba: "#8E3A59") } 
-    static var rackley: UIColor { return UIColor(rgba: "#5D8AA8") } 
-    static var radicalRed: UIColor { return UIColor(rgba: "#FF355E") } 
-    static var raisinBlack: UIColor { return UIColor(rgba: "#242124") } 
-    static var rajah: UIColor { return UIColor(rgba: "#FBAB60") } 
-    static var raspberry: UIColor { return UIColor(rgba: "#E30B5D") } 
-    static var raspberryGlace: UIColor { return UIColor(rgba: "#915F6D") } 
-    static var raspberryPink: UIColor { return UIColor(rgba: "#E25098") } 
-    static var raspberryRose: UIColor { return UIColor(rgba: "#B3446C") } 
-    static var rawSienna: UIColor { return UIColor(rgba: "#D68A59") } 
-    static var rawUmber: UIColor { return UIColor(rgba: "#826644") } 
-    static var razzleDazzleRose: UIColor { return UIColor(rgba: "#FF33CC") } 
-    static var razzmatazz: UIColor { return UIColor(rgba: "#E3256B") } 
-    static var razzmicBerry: UIColor { return UIColor(rgba: "#8D4E85") } 
-    static var rebeccaPurple: UIColor { return UIColor(rgba: "#663399") } 
-    static var red: UIColor { return UIColor(rgba: "#FF0000") } 
-    static var redCrayola: UIColor { return UIColor(rgba: "#EE204D") } 
-    static var redMunsell: UIColor { return UIColor(rgba: "#F2003C") } 
-    static var redNCS: UIColor { return UIColor(rgba: "#C40233") } 
-    static var redPantone: UIColor { return UIColor(rgba: "#ED2939") } 
-    static var redPigment: UIColor { return UIColor(rgba: "#ED1C24") } 
-    static var redRYB: UIColor { return UIColor(rgba: "#FE2712") } 
-    static var redBrown: UIColor { return UIColor(rgba: "#A52A2A") } 
-    static var redDevil: UIColor { return UIColor(rgba: "#860111") } 
-    static var redOrange: UIColor { return UIColor(rgba: "#FF5349") } 
-    static var redPurple: UIColor { return UIColor(rgba: "#E40078") } 
-    static var redSalsa: UIColor { return UIColor(rgba: "#FD3A4A") } 
-    static var redViovar: UIColor { return UIColor(rgba: "#C71585") } 
-    static var redwood: UIColor { return UIColor(rgba: "#A45A52") } 
-    static var regalia: UIColor { return UIColor(rgba: "#522D80") } 
-    static var registrationBlack: UIColor { return UIColor(rgba: "#000000") } 
-    static var resolutionBlue: UIColor { return UIColor(rgba: "#002387") } 
-    static var rhythm: UIColor { return UIColor(rgba: "#777696") } 
-    static var richBlack: UIColor { return UIColor(rgba: "#004040") } 
-    static var richBlackFOGRA29: UIColor { return UIColor(rgba: "#010B13") } 
-    static var richBlackFOGRA39: UIColor { return UIColor(rgba: "#010203") } 
-    static var richBrilliantLavender: UIColor { return UIColor(rgba: "#F1A7FE") } 
-    static var richCarmine: UIColor { return UIColor(rgba: "#D70040") } 
-    static var richElectricBlue: UIColor { return UIColor(rgba: "#0892D0") } 
-    static var richLavender: UIColor { return UIColor(rgba: "#A76BCF") } 
-    static var richLilac: UIColor { return UIColor(rgba: "#B666D2") } 
-    static var richMaroon: UIColor { return UIColor(rgba: "#B03060") } 
-    static var rifleGreen: UIColor { return UIColor(rgba: "#444C38") } 
-    static var roastCoffee: UIColor { return UIColor(rgba: "#704241") } 
-    static var robinEggBlue: UIColor { return UIColor(rgba: "#00CCCC") } 
-    static var rocketMetallic: UIColor { return UIColor(rgba: "#8A7F80") } 
-    static var romanSilver: UIColor { return UIColor(rgba: "#838996") } 
-    static var rose: UIColor { return UIColor(rgba: "#FF007F") } 
-    static var roseBonbon: UIColor { return UIColor(rgba: "#F9429E") } 
-    static var roseDust: UIColor { return UIColor(rgba: "#9E5E6F") } 
-    static var roseEbony: UIColor { return UIColor(rgba: "#674846") } 
-    static var roseGold: UIColor { return UIColor(rgba: "#B76E79") } 
-    static var roseMadder: UIColor { return UIColor(rgba: "#E32636") } 
-    static var rosePink: UIColor { return UIColor(rgba: "#FF66CC") } 
-    static var roseQuartz: UIColor { return UIColor(rgba: "#AA98A9") } 
-    static var roseRed: UIColor { return UIColor(rgba: "#C21E56") } 
-    static var roseTaupe: UIColor { return UIColor(rgba: "#905D5D") } 
-    static var roseVale: UIColor { return UIColor(rgba: "#AB4E52") } 
-    static var rosewood: UIColor { return UIColor(rgba: "#65000B") } 
-    static var rossoCorsa: UIColor { return UIColor(rgba: "#D40000") } 
-    static var rosyBrown: UIColor { return UIColor(rgba: "#BC8F8F") } 
-    static var royalAzure: UIColor { return UIColor(rgba: "#0038A8") } 
-    static var royalBlue: UIColor { return UIColor(rgba: "#002366") }
-    static var royalFuchsia: UIColor { return UIColor(rgba: "#CA2C92") } 
-    static var royalPurple: UIColor { return UIColor(rgba: "#7851A9") } 
-    static var royalYellow: UIColor { return UIColor(rgba: "#FADA5E") } 
-    static var ruber: UIColor { return UIColor(rgba: "#CE4676") } 
-    static var rubineRed: UIColor { return UIColor(rgba: "#D10056") } 
-    static var ruby: UIColor { return UIColor(rgba: "#E0115F") } 
-    static var rubyRed: UIColor { return UIColor(rgba: "#9B111E") } 
-    static var ruddy: UIColor { return UIColor(rgba: "#FF0028") } 
-    static var ruddyBrown: UIColor { return UIColor(rgba: "#BB6528") } 
-    static var ruddyPink: UIColor { return UIColor(rgba: "#E18E96") } 
-    static var rufous: UIColor { return UIColor(rgba: "#A81C07") } 
-    static var russet: UIColor { return UIColor(rgba: "#80461B") } 
-    static var russianGreen: UIColor { return UIColor(rgba: "#679267") } 
-    static var russianViovar: UIColor { return UIColor(rgba: "#32174D") } 
-    static var rust: UIColor { return UIColor(rgba: "#B7410E") } 
-    static var rustyRed: UIColor { return UIColor(rgba: "#DA2C43") } 
-    static var sacramentoStateGreen: UIColor { return UIColor(rgba: "#00563F") } 
-    static var saddleBrown: UIColor { return UIColor(rgba: "#8B4513") } 
-    static var safetyOrange: UIColor { return UIColor(rgba: "#FF7800") } 
-    static var safetyOrangeBlazeOrange: UIColor { return UIColor(rgba: "#FF6700") } 
-    static var safetyYellow: UIColor { return UIColor(rgba: "#EED202") } 
-    static var saffron: UIColor { return UIColor(rgba: "#F4C430") } 
-    static var sage: UIColor { return UIColor(rgba: "#BCB88A") } 
-    static var stPatricksBlue: UIColor { return UIColor(rgba: "#23297A") }
-    static var salmon: UIColor { return UIColor(rgba: "#FA8072") } 
-    static var salmonPink: UIColor { return UIColor(rgba: "#FF91A4") } 
-    static var sand: UIColor { return UIColor(rgba: "#C2B280") } 
-    static var sandDune: UIColor { return UIColor(rgba: "#967117") } 
-    static var sandstorm: UIColor { return UIColor(rgba: "#ECD540") } 
-    static var sandyBrown: UIColor { return UIColor(rgba: "#F4A460") } 
-    static var sandyTan: UIColor { return UIColor(rgba: "#FDD9B5") } 
-    static var sandyTaupe: UIColor { return UIColor(rgba: "#967117") } 
-    static var sangria: UIColor { return UIColor(rgba: "#92000A") } 
-    static var sapGreen: UIColor { return UIColor(rgba: "#507D2A") } 
-    static var sapphire: UIColor { return UIColor(rgba: "#0F52BA") } 
-    static var sapphireBlue: UIColor { return UIColor(rgba: "#0067A5") } 
-    static var sasquatchSocks: UIColor { return UIColor(rgba: "#FF4681") } 
-    static var satinSheenGold: UIColor { return UIColor(rgba: "#CBA135") } 
-    static var scarvar: UIColor { return UIColor(rgba: "#FF2400") }
-    static var schaussPink: UIColor { return UIColor(rgba: "#FF91AF") } 
-    static var schoolBusYellow: UIColor { return UIColor(rgba: "#FFD800") } 
-    static var screaminGreen: UIColor { return UIColor(rgba: "#66FF66") } 
-    static var seaBlue: UIColor { return UIColor(rgba: "#006994") } 
-    static var seaFoamGreen: UIColor { return UIColor(rgba: "#9FE2BF") } 
-    static var seaGreen: UIColor { return UIColor(rgba: "#2E8B57") } 
-    static var seaSerpent: UIColor { return UIColor(rgba: "#4BC7CF") } 
-    static var sealBrown: UIColor { return UIColor(rgba: "#59260B") } 
-    static var seashell: UIColor { return UIColor(rgba: "#FFF5EE") } 
-    static var selectiveYellow: UIColor { return UIColor(rgba: "#FFBA00") } 
-    static var sepia: UIColor { return UIColor(rgba: "#704214") } 
-    static var shadow: UIColor { return UIColor(rgba: "#8A795D") } 
-    static var shadowBlue: UIColor { return UIColor(rgba: "#778BA5") } 
-    static var shampoo: UIColor { return UIColor(rgba: "#FFCFF1") } 
-    static var shamrockGreen: UIColor { return UIColor(rgba: "#009E60") } 
-    static var sheenGreen: UIColor { return UIColor(rgba: "#8FD400") } 
-    static var shimmeringBlush: UIColor { return UIColor(rgba: "#D98695") } 
-    static var shinyShamrock: UIColor { return UIColor(rgba: "#5FA778") } 
-    static var shockingPink: UIColor { return UIColor(rgba: "#FC0FC0") } 
-    static var shockingPinkCrayola: UIColor { return UIColor(rgba: "#FF6FFF") } 
-    static var sienna: UIColor { return UIColor(rgba: "#882D17") } 
-    static var silver: UIColor { return UIColor(rgba: "#C0C0C0") } 
-    static var silverChalice: UIColor { return UIColor(rgba: "#ACACAC") } 
-    static var silverLakeBlue: UIColor { return UIColor(rgba: "#5D89BA") } 
-    static var silverPink: UIColor { return UIColor(rgba: "#C4AEAD") } 
-    static var silverSand: UIColor { return UIColor(rgba: "#BFC1C2") } 
-    static var sinopia: UIColor { return UIColor(rgba: "#CB410B") } 
-    static var sizzlingRed: UIColor { return UIColor(rgba: "#FF3855") } 
-    static var sizzlingSunrise: UIColor { return UIColor(rgba: "#FFDB00") } 
-    static var skobeloff: UIColor { return UIColor(rgba: "#007474") } 
-    static var skyBlue: UIColor { return UIColor(rgba: "#87CEEB") } 
-    static var skyMagenta: UIColor { return UIColor(rgba: "#CF71AF") } 
-    static var slateBlue: UIColor { return UIColor(rgba: "#6A5ACD") } 
-    static var slateGray: UIColor { return UIColor(rgba: "#708090") } 
-    static var smaltDarkPowderBlue: UIColor { return UIColor(rgba: "#003399") } 
-    static var slimyGreen: UIColor { return UIColor(rgba: "#299617") } 
-    static var smashedPumpkin: UIColor { return UIColor(rgba: "#FF6D3A") } 
-    static var smitten: UIColor { return UIColor(rgba: "#C84186") } 
-    static var smoke: UIColor { return UIColor(rgba: "#738276") } 
-    static var smokeyTopaz: UIColor { return UIColor(rgba: "#832A0D") } 
-    static var smokyBlack: UIColor { return UIColor(rgba: "#100C08") } 
-    static var smokyTopaz: UIColor { return UIColor(rgba: "#933D41") } 
-    static var snow: UIColor { return UIColor(rgba: "#FFFAFA") } 
-    static var soap: UIColor { return UIColor(rgba: "#CEC8EF") } 
-    static var solidPink: UIColor { return UIColor(rgba: "#893843") } 
-    static var sonicSilver: UIColor { return UIColor(rgba: "#757575") } 
-    static var spartanCrimson: UIColor { return UIColor(rgba: "#9E1316") } 
-    static var spaceCadet: UIColor { return UIColor(rgba: "#1D2951") } 
-    static var spanishBistre: UIColor { return UIColor(rgba: "#807532") } 
-    static var spanishBlue: UIColor { return UIColor(rgba: "#0070B8") } 
-    static var spanishCarmine: UIColor { return UIColor(rgba: "#D10047") } 
-    static var spanishCrimson: UIColor { return UIColor(rgba: "#E51A4C") } 
-    static var spanishGray: UIColor { return UIColor(rgba: "#989898") } 
-    static var spanishGreen: UIColor { return UIColor(rgba: "#009150") } 
-    static var spanishOrange: UIColor { return UIColor(rgba: "#E86100") } 
-    static var spanishPink: UIColor { return UIColor(rgba: "#F7BFBE") } 
-    static var spanishRed: UIColor { return UIColor(rgba: "#E60026") } 
-    static var spanishSkyBlue: UIColor { return UIColor(rgba: "#00FFFF") } 
-    static var spanishViovar: UIColor { return UIColor(rgba: "#4C2882") } 
-    static var spanishViridian: UIColor { return UIColor(rgba: "#007F5C") } 
-    static var spicyMix: UIColor { return UIColor(rgba: "#8B5f4D") } 
-    static var spiroDiscoBall: UIColor { return UIColor(rgba: "#0FC0FC") } 
-    static var springBud: UIColor { return UIColor(rgba: "#A7FC00") } 
-    static var springFrost: UIColor { return UIColor(rgba: "#87FF2A") } 
-    static var springGreen: UIColor { return UIColor(rgba: "#00FF7F") } 
-    static var starCommandBlue: UIColor { return UIColor(rgba: "#007BB8") } 
-    static var steelBlue: UIColor { return UIColor(rgba: "#4682B4") } 
-    static var steelPink: UIColor { return UIColor(rgba: "#CC33CC") } 
-    static var steelTeal: UIColor { return UIColor(rgba: "#5F8A8B") } 
-    static var stilDeGrainYellow: UIColor { return UIColor(rgba: "#FADA5E") } 
-    static var stizza: UIColor { return UIColor(rgba: "#990000") } 
-    static var stormcloud: UIColor { return UIColor(rgba: "#4F666A") } 
-    static var straw: UIColor { return UIColor(rgba: "#E4D96F") } 
-    static var strawberry: UIColor { return UIColor(rgba: "#FC5A8D") } 
-    static var sugarPlum: UIColor { return UIColor(rgba: "#914E75") } 
-    static var sunburntCyclops: UIColor { return UIColor(rgba: "#FF404C") } 
-    static var sunglow: UIColor { return UIColor(rgba: "#FFCC33") } 
-    static var sunny: UIColor { return UIColor(rgba: "#F2F27A") } 
-    static var sunray: UIColor { return UIColor(rgba: "#E3AB57") } 
-    static var sunset: UIColor { return UIColor(rgba: "#FAD6A5") } 
-    static var sunsetOrange: UIColor { return UIColor(rgba: "#FD5E53") } 
-    static var superPink: UIColor { return UIColor(rgba: "#CF6BA9") } 
-    static var sweetBrown: UIColor { return UIColor(rgba: "#A83731") } 
-    static var tan: UIColor { return UIColor(rgba: "#D2B48C") } 
-    static var tangelo: UIColor { return UIColor(rgba: "#F94D00") } 
-    static var tangerine: UIColor { return UIColor(rgba: "#F28500") } 
-    static var tangerineYellow: UIColor { return UIColor(rgba: "#FFCC00") } 
-    static var tangoPink: UIColor { return UIColor(rgba: "#E4717A") } 
-    static var tartOrange: UIColor { return UIColor(rgba: "#FB4D46") } 
-    static var taupe: UIColor { return UIColor(rgba: "#483C32") } 
-    static var taupeGray: UIColor { return UIColor(rgba: "#8B8589") } 
-    static var teaGreen: UIColor { return UIColor(rgba: "#D0F0C0") } 
-    static var teaRose: UIColor { return UIColor(rgba: "#F88379") }
-    static var teal: UIColor { return UIColor(rgba: "#008080") } 
-    static var tealBlue: UIColor { return UIColor(rgba: "#367588") } 
-    static var tealDeer: UIColor { return UIColor(rgba: "#99E6B3") } 
-    static var tealGreen: UIColor { return UIColor(rgba: "#00827F") } 
-    static var telemagenta: UIColor { return UIColor(rgba: "#CF3476") } 
-    static var tenneTawny: UIColor { return UIColor(rgba: "#CD5700") }
-    static var terraCotta: UIColor { return UIColor(rgba: "#E2725B") } 
-    static var thistle: UIColor { return UIColor(rgba: "#D8BFD8") } 
-    static var thulianPink: UIColor { return UIColor(rgba: "#DE6FA1") } 
-    static var tickleMePink: UIColor { return UIColor(rgba: "#FC89AC") } 
-    static var tiffanyBlue: UIColor { return UIColor(rgba: "#0ABAB5") } 
-    static var tigersEye: UIColor { return UIColor(rgba: "#E08D3C") } 
-    static var timberwolf: UIColor { return UIColor(rgba: "#DBD7D2") } 
-    static var titaniumYellow: UIColor { return UIColor(rgba: "#EEE600") } 
-    static var tomato: UIColor { return UIColor(rgba: "#FF6347") } 
-    static var toolbox: UIColor { return UIColor(rgba: "#746CC0") } 
-    static var topaz: UIColor { return UIColor(rgba: "#FFC87C") } 
-    static var tractorRed: UIColor { return UIColor(rgba: "#FD0E35") } 
-    static var trolleyGrey: UIColor { return UIColor(rgba: "#808080") } 
-    static var tropicalRainForest: UIColor { return UIColor(rgba: "#00755E") } 
-    static var tropicalViovar: UIColor { return UIColor(rgba: "#CDA4DE") } 
-    static var trueBlue: UIColor { return UIColor(rgba: "#0073CF") } 
-    static var tuftsBlue: UIColor { return UIColor(rgba: "#3E8EDE") } 
-    static var tulip: UIColor { return UIColor(rgba: "#FF878D") } 
-    static var tumbleweed: UIColor { return UIColor(rgba: "#DEAA88") } 
-    static var turkishRose: UIColor { return UIColor(rgba: "#B57281") } 
-    static var turquoise: UIColor { return UIColor(rgba: "#40E0D0") } 
-    static var turquoiseBlue: UIColor { return UIColor(rgba: "#00FFEF") } 
-    static var turquoiseGreen: UIColor { return UIColor(rgba: "#A0D6B4") } 
-    static var turquoiseSurf: UIColor { return UIColor(rgba: "#00C5CD") } 
-    static var turtleGreen: UIColor { return UIColor(rgba: "#8A9A5B") } 
-    static var tuscan: UIColor { return UIColor(rgba: "#FAD6A5") } 
-    static var tuscanBrown: UIColor { return UIColor(rgba: "#6F4E37") } 
-    static var tuscanRed: UIColor { return UIColor(rgba: "#7C4848") } 
-    static var tuscanTan: UIColor { return UIColor(rgba: "#A67B5B") } 
-    static var tuscany: UIColor { return UIColor(rgba: "#C09999") } 
-    static var twilightLavender: UIColor { return UIColor(rgba: "#8A496B") } 
-    static var tyrianPurple: UIColor { return UIColor(rgba: "#66023C") } 
-    static var uABlue: UIColor { return UIColor(rgba: "#0033AA") } 
-    static var uARed: UIColor { return UIColor(rgba: "#D9004C") } 
-    static var ube: UIColor { return UIColor(rgba: "#8878C3") } 
-    static var uCLABlue: UIColor { return UIColor(rgba: "#536895") } 
-    static var uCLAGold: UIColor { return UIColor(rgba: "#FFB300") } 
-    static var uFOGreen: UIColor { return UIColor(rgba: "#3CD070") } 
-    static var ultramarine: UIColor { return UIColor(rgba: "#3F00FF") } 
-    static var ultramarineBlue: UIColor { return UIColor(rgba: "#4166F5") } 
-    static var ultraPink: UIColor { return UIColor(rgba: "#FF6FFF") } 
-    static var ultraRed: UIColor { return UIColor(rgba: "#FC6C85") } 
-    static var umber: UIColor { return UIColor(rgba: "#635147") } 
-    static var unbleachedSilk: UIColor { return UIColor(rgba: "#FFDDCA") } 
-    static var unitedNationsBlue: UIColor { return UIColor(rgba: "#5B92E5") } 
-    static var universityOfCaliforniaGold: UIColor { return UIColor(rgba: "#B78727") } 
-    static var unmellowYellow: UIColor { return UIColor(rgba: "#FFFF66") } 
-    static var uPForestGreen: UIColor { return UIColor(rgba: "#014421") } 
-    static var uPMaroon: UIColor { return UIColor(rgba: "#7B1113") } 
-    static var upsdellRed: UIColor { return UIColor(rgba: "#AE2029") } 
-    static var urobilin: UIColor { return UIColor(rgba: "#E1AD21") } 
-    static var uSAFABlue: UIColor { return UIColor(rgba: "#004F98") } 
-    static var uSCCardinal: UIColor { return UIColor(rgba: "#990000") } 
-    static var uSCGold: UIColor { return UIColor(rgba: "#FFCC00") } 
-    static var universityOfTennesseeOrange: UIColor { return UIColor(rgba: "#F77F00") } 
-    static var utahCrimson: UIColor { return UIColor(rgba: "#D3003F") } 
-    static var vanDykeBrown: UIColor { return UIColor(rgba: "#664228") } 
-    static var vanilla: UIColor { return UIColor(rgba: "#F3E5AB") } 
-    static var vanillaIce: UIColor { return UIColor(rgba: "#F38FA9") } 
-    static var vegasGold: UIColor { return UIColor(rgba: "#C5B358") } 
-    static var venetianRed: UIColor { return UIColor(rgba: "#C80815") } 
-    static var verdigris: UIColor { return UIColor(rgba: "#43B3AE") } 
-    static var vermilion: UIColor { return UIColor(rgba: "#E34234") } 
-    static var veronica: UIColor { return UIColor(rgba: "#A020F0") } 
-    static var veryLightAzure: UIColor { return UIColor(rgba: "#74BBFB") } 
-    static var veryLightBlue: UIColor { return UIColor(rgba: "#6666FF") } 
-    static var veryLightMalachiteGreen: UIColor { return UIColor(rgba: "#64E986") } 
-    static var veryLightTangelo: UIColor { return UIColor(rgba: "#FFB077") } 
-    static var veryPaleOrange: UIColor { return UIColor(rgba: "#FFDFBF") } 
-    static var veryPaleYellow: UIColor { return UIColor(rgba: "#FFFFBF") } 
-    static var viovar: UIColor { return UIColor(rgba: "#8F00FF") } 
-    static var viovarColorWheel: UIColor { return UIColor(rgba: "#7F00FF") } 
-    static var viovarRYB: UIColor { return UIColor(rgba: "#8601AF") } 
-    static var viovarWeb: UIColor { return UIColor(rgba: "#EE82EE") } 
-    static var viovarBlue: UIColor { return UIColor(rgba: "#324AB2") } 
-    static var viovarRed: UIColor { return UIColor(rgba: "#F75394") } 
-    static var viridian: UIColor { return UIColor(rgba: "#40826D") } 
-    static var viridianGreen: UIColor { return UIColor(rgba: "#009698") } 
-    static var vistaBlue: UIColor { return UIColor(rgba: "#7C9ED9") } 
-    static var vividAmber: UIColor { return UIColor(rgba: "#CC9900") } 
-    static var vividAuburn: UIColor { return UIColor(rgba: "#922724") } 
-    static var vividBurgundy: UIColor { return UIColor(rgba: "#9F1D35") } 
-    static var vividCerise: UIColor { return UIColor(rgba: "#DA1D81") } 
-    static var vividCerulean: UIColor { return UIColor(rgba: "#00AAEE") } 
-    static var vividCrimson: UIColor { return UIColor(rgba: "#CC0033") } 
-    static var vividGamboge: UIColor { return UIColor(rgba: "#FF9900") } 
-    static var vividLimeGreen: UIColor { return UIColor(rgba: "#A6D608") } 
-    static var vividMalachite: UIColor { return UIColor(rgba: "#00CC33") } 
-    static var vividMulberry: UIColor { return UIColor(rgba: "#B80CE3") } 
-    static var vividOrange: UIColor { return UIColor(rgba: "#FF5F00") } 
-    static var vividOrangePeel: UIColor { return UIColor(rgba: "#FFA000") } 
-    static var vividOrchid: UIColor { return UIColor(rgba: "#CC00FF") } 
-    static var vividRaspberry: UIColor { return UIColor(rgba: "#FF006C") } 
-    static var vividRed: UIColor { return UIColor(rgba: "#F70D1A") } 
-    static var vividRedTangelo: UIColor { return UIColor(rgba: "#DF6124") } 
-    static var vividSkyBlue: UIColor { return UIColor(rgba: "#00CCFF") } 
-    static var vividTangelo: UIColor { return UIColor(rgba: "#F07427") } 
-    static var vividTangerine: UIColor { return UIColor(rgba: "#FFA089") } 
-    static var vividVermilion: UIColor { return UIColor(rgba: "#E56024") } 
-    static var vividViovar: UIColor { return UIColor(rgba: "#9F00FF") } 
-    static var vividYellow: UIColor { return UIColor(rgba: "#FFE302") } 
-    static var volt: UIColor { return UIColor(rgba: "#CEFF00") } 
-    static var wageningenGreen: UIColor { return UIColor(rgba: "#34B233") } 
-    static var warmBlack: UIColor { return UIColor(rgba: "#004242") } 
-    static var waterspout: UIColor { return UIColor(rgba: "#A4F4F9") } 
-    static var weldonBlue: UIColor { return UIColor(rgba: "#7C98AB") } 
-    static var wenge: UIColor { return UIColor(rgba: "#645452") } 
-    static var wheat: UIColor { return UIColor(rgba: "#F5DEB3") } 
-    static var white: UIColor { return UIColor(rgba: "#FFFFFF") } 
-    static var whiteSmoke: UIColor { return UIColor(rgba: "#F5F5F5") } 
-    static var wildBlueYonder: UIColor { return UIColor(rgba: "#A2ADD0") } 
-    static var wildOrchid: UIColor { return UIColor(rgba: "#D470A2") } 
-    static var wildStrawberry: UIColor { return UIColor(rgba: "#FF43A4") } 
-    static var wildWatermelon: UIColor { return UIColor(rgba: "#FC6C85") } 
-    static var willpowerOrange: UIColor { return UIColor(rgba: "#FD5800") } 
-    static var windsorTan: UIColor { return UIColor(rgba: "#A75502") } 
-    static var wine: UIColor { return UIColor(rgba: "#722F37") } 
-    static var wineDregs: UIColor { return UIColor(rgba: "#673147") } 
-    static var winterSky: UIColor { return UIColor(rgba: "#FF007C") } 
-    static var winterWizard: UIColor { return UIColor(rgba: "#A0E6FF") } 
-    static var wintergreenDream: UIColor { return UIColor(rgba: "#56887D") } 
-    static var wisteria: UIColor { return UIColor(rgba: "#C9A0DC") } 
-    static var woodBrown: UIColor { return UIColor(rgba: "#C19A6B") } 
-    static var xanadu: UIColor { return UIColor(rgba: "#738678") } 
-    static var yaleBlue: UIColor { return UIColor(rgba: "#0F4D92") } 
-    static var yankeesBlue: UIColor { return UIColor(rgba: "#1C2841") } 
-    static var yellow: UIColor { return UIColor(rgba: "#FFFF00") } 
-    static var yellowCrayola: UIColor { return UIColor(rgba: "#FCE883") } 
-    static var yellowMunsell: UIColor { return UIColor(rgba: "#EFCC00") } 
-    static var yellowNCS: UIColor { return UIColor(rgba: "#FFD300") } 
-    static var yellowPantone: UIColor { return UIColor(rgba: "#FEDF00") } 
-    static var yellowProcess: UIColor { return UIColor(rgba: "#FFEF00") } 
-    static var yellowRYB: UIColor { return UIColor(rgba: "#FEFE33") } 
-    static var yellowGreen: UIColor { return UIColor(rgba: "#9ACD32") } 
-    static var yellowOrange: UIColor { return UIColor(rgba: "#FFAE42") } 
-    static var yellowRose: UIColor { return UIColor(rgba: "#FFF000") } 
-    static var yellowSunshine: UIColor { return UIColor(rgba: "#FFF700") } 
-    static var zaffre: UIColor { return UIColor(rgba: "#0014A8") } 
-    static var zinnwalditeBrown: UIColor { return UIColor(rgba: "#2C1608") } 
-    static var zomp: UIColor { return UIColor(rgba: "#39A78E") }  
+    static let absoluteZero = UIColor(hex: "#0048BA")
+    static let acidGreen = UIColor(hex: "#B0BF1A")
+    static let aero = UIColor(hex: "#7CB9E8")
+    static let aeroBlue = UIColor(hex: "#C9FFE5")
+    static let africanViolet = UIColor(hex: "#B284BE")
+    static let airForceBlueRAF = UIColor(hex: "#5D8AA8")
+    static let airForceBlueUSAF = UIColor(hex: "#00308F")
+    static let airSuperiorityBlue = UIColor(hex: "#72A0C1")
+    static let alabamaCrimson = UIColor(hex: "#AF002A")
+    static let alabaster = UIColor(hex: "#F2F0E6")
+    static let aliceBlue = UIColor(hex: "#F0F8FF")
+    static let alienArmpit = UIColor(hex: "#84DE02")
+    static let alizarinCrimson = UIColor(hex: "#E32636")
+    static let alloyOrange = UIColor(hex: "#C46210")
+    static let almond = UIColor(hex: "#EFDECD")
+    static let amaranth = UIColor(hex: "#E52B50")
+    static let amaranthDeepPurple = UIColor(hex: "#9F2B68")
+    static let amaranthPink = UIColor(hex: "#F19CBB")
+    static let amaranthPurple = UIColor(hex: "#AB274F")
+    static let amaranthRed = UIColor(hex: "#D3212D")
+    static let amazon = UIColor(hex: "#3B7A57")
+    static let amazonite = UIColor(hex: "#00C4B0")
+    static let amber = UIColor(hex: "#FFBF00")
+    static let amberSAEECE = UIColor(hex: "#FF7E00")
+    static let americanRose = UIColor(hex: "#FF033E")
+    static let amethyst = UIColor(hex: "#9966CC")
+    static let androidGreen = UIColor(hex: "#A4C639")
+    static let antiFlashWhite = UIColor(hex: "#F2F3F4")
+    static let antiqueBrass = UIColor(hex: "#CD9575")
+    static let antiqueBronze = UIColor(hex: "#665D1E")
+    static let antiqueFuchsia = UIColor(hex: "#915C83")
+    static let antiqueRuby = UIColor(hex: "#841B2D")
+    static let antiqueWhite = UIColor(hex: "#FAEBD7")
+    static let aoEnglish = UIColor(hex: "#008000")
+    static let appleGreen = UIColor(hex: "#8DB600")
+    static let apricot = UIColor(hex: "#FBCEB1")
+    static let aqua = UIColor(hex: "#00FFFF")
+    static let aquamarine = UIColor(hex: "#7FFFD4")
+    static let arcticLime = UIColor(hex: "#D0FF14")
+    static let armyGreen = UIColor(hex: "#4B5320")
+    static let arsenic = UIColor(hex: "#3B444B")
+    static let artichoke = UIColor(hex: "#8F9779")
+    static let arylideYellow = UIColor(hex: "#E9D66B")
+    static let ashGrey = UIColor(hex: "#B2BEB5")
+    static let asparagus = UIColor(hex: "#87A96B")
+    static let atomicTangerine = UIColor(hex: "#FF9966")
+    static let auburn = UIColor(hex: "#A52A2A")
+    static let aureolin = UIColor(hex: "#FDEE00")
+    static let auroMetalSaurus = UIColor(hex: "#6E7F80")
+    static let avocado = UIColor(hex: "#568203")
+    static let awesome = UIColor(hex: "#FF2052")
+    static let aztecGold = UIColor(hex: "#C39953")
+    static let azure = UIColor(hex: "#007FFF")
+    static let azureWebColor = UIColor(hex: "#F0FFFF")
+    static let azureMist = UIColor(hex: "#F0FFFF")
+    static let azureishWhite = UIColor(hex: "#DBE9F4")
+    static let babyBlue = UIColor(hex: "#89CFF0")
+    static let babyBlueEyes = UIColor(hex: "#A1CAF1")
+    static let babyPink = UIColor(hex: "#F4C2C2")
+    static let babyPowder = UIColor(hex: "#FEFEFA")
+    static let bakerMillerPink = UIColor(hex: "#FF91AF")
+    static let ballBlue = UIColor(hex: "#21ABCD")
+    static let bananaMania = UIColor(hex: "#FAE7B5")
+    static let bananaYellow = UIColor(hex: "#FFE135")
+    static let bangladeshGreen = UIColor(hex: "#006A4E")
+    static let barbiePink = UIColor(hex: "#E0218A")
+    static let barnRed = UIColor(hex: "#7C0A02")
+    static let batteryChargedBlue = UIColor(hex: "#1DACD6")
+    static let battleshipGrey = UIColor(hex: "#848482")
+    static let bazaar = UIColor(hex: "#98777B")
+    static let beauBlue = UIColor(hex: "#BCD4E6")
+    static let beaver = UIColor(hex: "#9F8170")
+    static let begonia = UIColor(hex: "#FA6E79")
+    static let beige = UIColor(hex: "#F5F5DC")
+    static let bdazzledBlue = UIColor(hex: "#2E5894")
+    static let bigDipOruby = UIColor(hex: "#9C2542")
+    static let bigFootFeet = UIColor(hex: "#E88E5A")
+    static let bisque = UIColor(hex: "#FFE4C4")
+    static let bistre = UIColor(hex: "#3D2B1F")
+    static let bistreBrown = UIColor(hex: "#967117")
+    static let bitterLemon = UIColor(hex: "#CAE00D")
+    static let bitterLime = UIColor(hex: "#BFFF00")
+    static let bittersweet = UIColor(hex: "#FE6F5E")
+    static let bittersweetShimmer = UIColor(hex: "#BF4F51")
+    static let black = UIColor(hex: "#000000")
+    static let blackBean = UIColor(hex: "#3D0C02")
+    static let blackCoral = UIColor(hex: "#54626F")
+    static let blackLeatherJacket = UIColor(hex: "#253529")
+    static let blackOlive = UIColor(hex: "#3B3C36")
+    static let blackShadows = UIColor(hex: "#BFAFB2")
+    static let blanchedAlmond = UIColor(hex: "#FFEBCD")
+    static let blastOffBronze = UIColor(hex: "#A57164")
+    static let bleuDeFrance = UIColor(hex: "#318CE7")
+    static let blizzardBlue = UIColor(hex: "#ACE5EE")
+    static let blond = UIColor(hex: "#FAF0BE")
+    static let blue = UIColor(hex: "#0000FF")
+    static let blueCrayola = UIColor(hex: "#1F75FE")
+    static let blueMunsell = UIColor(hex: "#0093AF")
+    static let blueNCS = UIColor(hex: "#0087BD")
+    static let bluePantone = UIColor(hex: "#0018A8")
+    static let bluePigment = UIColor(hex: "#333399")
+    static let blueRYB = UIColor(hex: "#0247FE")
+    static let blueBell = UIColor(hex: "#A2A2D0")
+    static let blueBolt = UIColor(hex: "#00B9FB")
+    static let blueGray = UIColor(hex: "#6699CC")
+    static let blueGreen = UIColor(hex: "#0D98BA")
+    static let blueJeans = UIColor(hex: "#5DADEC")
+    static let blueLagoon = UIColor(hex: "#ACE5EE")
+    static let blueMagentaViolet = UIColor(hex: "#553592")
+    static let blueSapphire = UIColor(hex: "#126180")
+    static let blueViolet = UIColor(hex: "#8A2BE2")
+    static let blueYonder = UIColor(hex: "#5072A7")
+    static let blueberry = UIColor(hex: "#4F86F7")
+    static let bluebonnet = UIColor(hex: "#1C1CF0")
+    static let blush = UIColor(hex: "#DE5D83")
+    static let bole = UIColor(hex: "#79443B")
+    static let bondiBlue = UIColor(hex: "#0095B6")
+    static let bone = UIColor(hex: "#E3DAC9")
+    static let boogerBuster = UIColor(hex: "#DDE26A")
+    static let bostonUniversityRed = UIColor(hex: "#CC0000")
+    static let bottleGreen = UIColor(hex: "#006A4E")
+    static let boysenberry = UIColor(hex: "#873260")
+    static let brandeisBlue = UIColor(hex: "#0070FF")
+    static let brass = UIColor(hex: "#B5A642")
+    static let brickRed = UIColor(hex: "#CB4154")
+    static let brightCerulean = UIColor(hex: "#1DACD6")
+    static let brightGreen = UIColor(hex: "#66FF00")
+    static let brightLavender = UIColor(hex: "#BF94E4")
+    static let brightLilac = UIColor(hex: "#D891EF")
+    static let brightMaroon = UIColor(hex: "#C32148")
+    static let brightNavyBlue = UIColor(hex: "#1974D2")
+    static let brightPink = UIColor(hex: "#FF007F")
+    static let brightTurquoise = UIColor(hex: "#08E8DE")
+    static let brightUbe = UIColor(hex: "#D19FE8")
+    static let brightYellowCrayola = UIColor(hex: "#FFAA1D")
+    static let brilliantAzure = UIColor(hex: "#3399FF")
+    static let brilliantLavender = UIColor(hex: "#F4BBFF")
+    static let brilliantRose = UIColor(hex: "#FF55A3")
+    static let brinkPink = UIColor(hex: "#FB607F")
+    static let britishRacingGreen = UIColor(hex: "#004225")
+    static let bronze = UIColor(hex: "#CD7F32")
+    static let bronzeYellow = UIColor(hex: "#737000")
+    static let brownTraditional = UIColor(hex: "#964B00")
+    static let brownWeb = UIColor(hex: "#A52A2A")
+    static let brownNose = UIColor(hex: "#6B4423")
+    static let brownSugar = UIColor(hex: "#AF6E4D")
+    static let brownYellow = UIColor(hex: "#cc9966")
+    static let brunswickGreen = UIColor(hex: "#1B4D3E")
+    static let bubbleGum = UIColor(hex: "#FFC1CC")
+    static let bubbles = UIColor(hex: "#E7FEFF")
+    static let budGreen = UIColor(hex: "#7BB661")
+    static let buff = UIColor(hex: "#F0DC82")
+    static let bulgarianRose = UIColor(hex: "#480607")
+    static let burgundy = UIColor(hex: "#800020")
+    static let burlywood = UIColor(hex: "#DEB887")
+    static let burnishedBrown = UIColor(hex: "#A17A74")
+    static let burntOrange = UIColor(hex: "#CC5500")
+    static let burntSienna = UIColor(hex: "#E97451")
+    static let burntUmber = UIColor(hex: "#8A3324")
+    static let buttonBlue = UIColor(hex: "#24A0ED")
+    static let byzantine = UIColor(hex: "#BD33A4")
+    static let byzantium = UIColor(hex: "#702963")
+    static let cadet = UIColor(hex: "#536872")
+    static let cadetBlue = UIColor(hex: "#5F9EA0")
+    static let cadetGrey = UIColor(hex: "#91A3B0")
+    static let cadmiumGreen = UIColor(hex: "#006B3C")
+    static let cadmiumOrange = UIColor(hex: "#ED872D")
+    static let cadmiumRed = UIColor(hex: "#E30022")
+    static let cadmiumYellow = UIColor(hex: "#FFF600")
+    static let caféAuLait = UIColor(hex: "#A67B5B")
+    static let caféNoir = UIColor(hex: "#4B3621")
+    static let calPolyPomonaGreen = UIColor(hex: "#1E4D2B")
+    static let cambridgeBlue = UIColor(hex: "#A3C1AD")
+    static let camel = UIColor(hex: "#C19A6B")
+    static let cameoPink = UIColor(hex: "#EFBBCC")
+    static let camouflageGreen = UIColor(hex: "#78866B")
+    static let canary = UIColor(hex: "#FFFF99")
+    static let canaryYellow = UIColor(hex: "#FFEF00")
+    static let candyAppleRed = UIColor(hex: "#FF0800")
+    static let candyPink = UIColor(hex: "#E4717A")
+    static let capri = UIColor(hex: "#00BFFF")
+    static let caputMortuum = UIColor(hex: "#592720")
+    static let cardinal = UIColor(hex: "#C41E3A")
+    static let caribbeanGreen = UIColor(hex: "#00CC99")
+    static let carmine = UIColor(hex: "#960018")
+    static let carmineMP = UIColor(hex: "#D70040")
+    static let carminePink = UIColor(hex: "#EB4C42")
+    static let carmineRed = UIColor(hex: "#FF0038")
+    static let carnationPink = UIColor(hex: "#FFA6C9")
+    static let carnelian = UIColor(hex: "#B31B1B")
+    static let carolinaBlue = UIColor(hex: "#56A0D3")
+    static let carrotOrange = UIColor(hex: "#ED9121")
+    static let castletonGreen = UIColor(hex: "#00563F")
+    static let catalinaBlue = UIColor(hex: "#062A78")
+    static let catawba = UIColor(hex: "#703642")
+    static let cedarChest = UIColor(hex: "#C95A49")
+    static let ceil = UIColor(hex: "#92A1CF")
+    static let celadon = UIColor(hex: "#ACE1AF")
+    static let celadonBlue = UIColor(hex: "#007BA7")
+    static let celadonGreen = UIColor(hex: "#2F847C")
+    static let celeste = UIColor(hex: "#B2FFFF")
+    static let celestialBlue = UIColor(hex: "#4997D0")
+    static let cerise = UIColor(hex: "#DE3163")
+    static let cerisePink = UIColor(hex: "#EC3B83")
+    static let cerulean = UIColor(hex: "#007BA7")
+    static let ceruleanBlue = UIColor(hex: "#2A52BE")
+    static let ceruleanFrost = UIColor(hex: "#6D9BC3")
+    static let cGBlue = UIColor(hex: "#007AA5")
+    static let cGRed = UIColor(hex: "#E03C31")
+    static let chamoisee = UIColor(hex: "#A0785A")
+    static let champagne = UIColor(hex: "#F7E7CE")
+    static let champagnePink = UIColor(hex: "#F1DDCF")
+    static let charcoal = UIColor(hex: "#36454F")
+    static let charlestonGreen = UIColor(hex: "#232B2B")
+    static let charmPink = UIColor(hex: "#E68FAC")
+    static let chartreuseTraditional = UIColor(hex: "#DFFF00")
+    static let chartreuseWeb = UIColor(hex: "#7FFF00")
+    static let cherry = UIColor(hex: "#DE3163")
+    static let cherryBlossomPink = UIColor(hex: "#FFB7C5")
+    static let chestnut = UIColor(hex: "#954535")
+    static let chinaPink = UIColor(hex: "#DE6FA1")
+    static let chinaRose = UIColor(hex: "#A8516E")
+    static let chineseRed = UIColor(hex: "#AA381E")
+    static let chineseViolet = UIColor(hex: "#856088")
+    static let chlorophyllGreen = UIColor(hex: "#4AFF00")
+    static let chocolateTraditional = UIColor(hex: "#7B3F00")
+    static let chocolateWeb = UIColor(hex: "#D2691E")
+    static let chromeYellow = UIColor(hex: "#FFA700")
+    static let cinereous = UIColor(hex: "#98817B")
+    static let cinnabar = UIColor(hex: "#E34234")
+    static let cinnamon = UIColor(hex: "#D2691E")
+    static let cinnamonSatin = UIColor(hex: "#CD607E")
+    static let citrine = UIColor(hex: "#E4D00A")
+    static let citron = UIColor(hex: "#9FA91F")
+    static let claret = UIColor(hex: "#7F1734")
+    static let classicRose = UIColor(hex: "#FBCCE7")
+    static let cobaltBlue = UIColor(hex: "#0047AB")
+    static let cocoaBrown = UIColor(hex: "#D2691E")
+    static let coconut = UIColor(hex: "#965A3E")
+    static let coffee = UIColor(hex: "#6F4E37")
+    static let columbiaBlue = UIColor(hex: "#C4D8E2")
+    static let congoPink = UIColor(hex: "#F88379")
+    static let coolBlack = UIColor(hex: "#002E63")
+    static let coolGrey = UIColor(hex: "#8C92AC")
+    static let copper = UIColor(hex: "#B87333")
+    static let copperCrayola = UIColor(hex: "#DA8A67")
+    static let copperPenny = UIColor(hex: "#AD6F69")
+    static let copperRed = UIColor(hex: "#CB6D51")
+    static let copperRose = UIColor(hex: "#996666")
+    static let coquelicot = UIColor(hex: "#FF3800")
+    static let coral = UIColor(hex: "#FF7F50")
+    static let coralPink = UIColor(hex: "#F88379")
+    static let coralRed = UIColor(hex: "#FF4040")
+    static let coralReef = UIColor(hex: "#FD7C6E")
+    static let cordovan = UIColor(hex: "#893F45")
+    static let corn = UIColor(hex: "#FBEC5D")
+    static let cornellRed = UIColor(hex: "#B31B1B")
+    static let cornflowerBlue = UIColor(hex: "#6495ED")
+    static let cornsilk = UIColor(hex: "#FFF8DC")
+    static let cosmicCobalt = UIColor(hex: "#2E2D88")
+    static let cosmicLatte = UIColor(hex: "#FFF8E7")
+    static let coyoteBrown = UIColor(hex: "#81613C")
+    static let cottonCandy = UIColor(hex: "#FFBCD9")
+    static let cream = UIColor(hex: "#FFFDD0")
+    static let crimson = UIColor(hex: "#DC143C")
+    static let crimsonGlory = UIColor(hex: "#BE0032")
+    static let crimsonRed = UIColor(hex: "#990000")
+    static let cultured = UIColor(hex: "#F5F5F5")
+    static let cyan = UIColor(hex: "#00FFFF")
+    static let cyanAzure = UIColor(hex: "#4E82B4")
+    static let cyanBlueAzure = UIColor(hex: "#4682BF")
+    static let cyanCobaltBlue = UIColor(hex: "#28589C")
+    static let cyanCornflowerBlue = UIColor(hex: "#188BC2")
+    static let cyanProcess = UIColor(hex: "#00B7EB")
+    static let cyberGrape = UIColor(hex: "#58427C")
+    static let cyberYellow = UIColor(hex: "#FFD300")
+    static let cyclamen = UIColor(hex: "#F56FA1")
+    static let daffodil = UIColor(hex: "#FFFF31")
+    static let dandelion = UIColor(hex: "#F0E130")
+    static let darkBlue = UIColor(hex: "#00008B")
+    static let darkBlueGray = UIColor(hex: "#666699")
+    static let darkBrown = UIColor(hex: "#654321")
+    static let darkBrownTangelo = UIColor(hex: "#88654E")
+    static let darkByzantium = UIColor(hex: "#5D3954")
+    static let darkCandyAppleRed = UIColor(hex: "#A40000")
+    static let darkCerulean = UIColor(hex: "#08457E")
+    static let darkChestnut = UIColor(hex: "#986960")
+    static let darkCoral = UIColor(hex: "#CD5B45")
+    static let darkCyan = UIColor(hex: "#008B8B")
+    static let darkElectricBlue = UIColor(hex: "#536878")
+    static let darkGoldenrod = UIColor(hex: "#B8860B")
+    static let darkGrayX11 = UIColor(hex: "#A9A9A9")
+    static let darkGreen = UIColor(hex: "#013220")
+    static let darkGreenX11 = UIColor(hex: "#006400")
+    static let darkGunmetal = UIColor(hex: "#1F262A")
+    static let darkImperialBlue = UIColor(hex: "#00416A")
+    static let darkJungleGreen = UIColor(hex: "#1A2421")
+    static let darkKhaki = UIColor(hex: "#BDB76B")
+    static let darkLava = UIColor(hex: "#483C32")
+    static let darkLavender = UIColor(hex: "#734F96")
+    static let darkLiver = UIColor(hex: "#534B4F")
+    static let darkLiverHorses = UIColor(hex: "#543D37")
+    static let darkMagenta = UIColor(hex: "#8B008B")
+    static let darkMediumGray = UIColor(hex: "#A9A9A9")
+    static let darkMidnightBlue = UIColor(hex: "#003366")
+    static let darkMossGreen = UIColor(hex: "#4A5D23")
+    static let darkOliveGreen = UIColor(hex: "#556B2F")
+    static let darkOrange = UIColor(hex: "#FF8C00")
+    static let darkOrchid = UIColor(hex: "#9932CC")
+    static let darkPastelBlue = UIColor(hex: "#779ECB")
+    static let darkPastelGreen = UIColor(hex: "#03C03C")
+    static let darkPastelPurple = UIColor(hex: "#966FD6")
+    static let darkPastelRed = UIColor(hex: "#C23B22")
+    static let darkPink = UIColor(hex: "#E75480")
+    static let darkPowderBlue = UIColor(hex: "#003399")
+    static let darkPuce = UIColor(hex: "#4F3A3C")
+    static let darkPurple = UIColor(hex: "#301934")
+    static let darkRaspberry = UIColor(hex: "#872657")
+    static let darkRed = UIColor(hex: "#8B0000")
+    static let darkSalmon = UIColor(hex: "#E9967A")
+    static let darkScarlet = UIColor(hex: "#560319")
+    static let darkSeaGreen = UIColor(hex: "#8FBC8F")
+    static let darkSienna = UIColor(hex: "#3C1414")
+    static let darkSkyBlue = UIColor(hex: "#8CBED6")
+    static let darkSlateBlue = UIColor(hex: "#483D8B")
+    static let darkSlateGray = UIColor(hex: "#2F4F4F")
+    static let darkSpringGreen = UIColor(hex: "#177245")
+    static let darkTan = UIColor(hex: "#918151")
+    static let darkTangerine = UIColor(hex: "#FFA812")
+    static let darkTaupe = UIColor(hex: "#483C32")
+    static let darkTerraCotta = UIColor(hex: "#CC4E5C")
+    static let darkTurquoise = UIColor(hex: "#00CED1")
+    static let darkVanilla = UIColor(hex: "#D1BEA8")
+    static let darkViolet = UIColor(hex: "#9400D3")
+    static let darkYellow = UIColor(hex: "#9B870C")
+    static let dartmouthGreen = UIColor(hex: "#00703C")
+    static let davysGrey = UIColor(hex: "#555555")
+    static let debianRed = UIColor(hex: "#D70A53")
+    static let deepAquamarine = UIColor(hex: "#40826D")
+    static let deepCarmine = UIColor(hex: "#A9203E")
+    static let deepCarminePink = UIColor(hex: "#EF3038")
+    static let deepCarrotOrange = UIColor(hex: "#E9692C")
+    static let deepCerise = UIColor(hex: "#DA3287")
+    static let deepChampagne = UIColor(hex: "#FAD6A5")
+    static let deepChestnut = UIColor(hex: "#B94E48")
+    static let deepCoffee = UIColor(hex: "#704241")
+    static let deepFuchsia = UIColor(hex: "#C154C1")
+    static let deepGreen = UIColor(hex: "#056608")
+    static let deepGreenCyanTurquoise = UIColor(hex: "#0E7C61")
+    static let deepJungleGreen = UIColor(hex: "#004B49")
+    static let deepKoamaru = UIColor(hex: "#333366")
+    static let deepLemon = UIColor(hex: "#F5C71A")
+    static let deepLilac = UIColor(hex: "#9955BB")
+    static let deepMagenta = UIColor(hex: "#CC00CC")
+    static let deepMaroon = UIColor(hex: "#820000")
+    static let deepMauve = UIColor(hex: "#D473D4")
+    static let deepMossGreen = UIColor(hex: "#355E3B")
+    static let deepPeach = UIColor(hex: "#FFCBA4")
+    static let deepPink = UIColor(hex: "#FF1493")
+    static let deepPuce = UIColor(hex: "#A95C68")
+    static let deepRed = UIColor(hex: "#850101")
+    static let deepRuby = UIColor(hex: "#843F5B")
+    static let deepSaffron = UIColor(hex: "#FF9933")
+    static let deepSkyBlue = UIColor(hex: "#00BFFF")
+    static let deepSpaceSparkle = UIColor(hex: "#4A646C")
+    static let deepSpringBud = UIColor(hex: "#556B2F")
+    static let deepTaupe = UIColor(hex: "#7E5E60")
+    static let deepTuscanRed = UIColor(hex: "#66424D")
+    static let deepViolet = UIColor(hex: "#330066")
+    static let deer = UIColor(hex: "#BA8759")
+    static let denim = UIColor(hex: "#1560BD")
+    static let denimBlue = UIColor(hex: "#2243B6")
+    static let desaturatedCyan = UIColor(hex: "#669999")
+    static let desert = UIColor(hex: "#C19A6B")
+    static let desertSand = UIColor(hex: "#EDC9AF")
+    static let desire = UIColor(hex: "#EA3C53")
+    static let diamond = UIColor(hex: "#B9F2FF")
+    static let dimGray = UIColor(hex: "#696969")
+    static let dingyDungeon = UIColor(hex: "#C53151")
+    static let dirt = UIColor(hex: "#9B7653")
+    static let dodgerBlue = UIColor(hex: "#1E90FF")
+    static let dogwoodRose = UIColor(hex: "#D71868")
+    static let dollarBill = UIColor(hex: "#85BB65")
+    static let dolphinGray = UIColor(hex: "#828E84")
+    static let donkeyBrown = UIColor(hex: "#664C28")
+    static let drab = UIColor(hex: "#967117")
+    static let dukeBlue = UIColor(hex: "#00009C")
+    static let dustStorm = UIColor(hex: "#E5CCC9")
+    static let dutchWhite = UIColor(hex: "#EFDFBB")
+    static let earthYellow = UIColor(hex: "#E1A95F")
+    static let ebony = UIColor(hex: "#555D50")
+    static let ecru = UIColor(hex: "#C2B280")
+    static let eerieBlack = UIColor(hex: "#1B1B1B")
+    static let eggplant = UIColor(hex: "#614051")
+    static let eggshell = UIColor(hex: "#F0EAD6")
+    static let egyptianBlue = UIColor(hex: "#1034A6")
+    static let electricBlue = UIColor(hex: "#7DF9FF")
+    static let electricCrimson = UIColor(hex: "#FF003F")
+    static let electricCyan = UIColor(hex: "#00FFFF")
+    static let electricGreen = UIColor(hex: "#00FF00")
+    static let electricIndigo = UIColor(hex: "#6F00FF")
+    static let electricLavender = UIColor(hex: "#F4BBFF")
+    static let electricLime = UIColor(hex: "#CCFF00")
+    static let electricPurple = UIColor(hex: "#BF00FF")
+    static let electricUltramarine = UIColor(hex: "#3F00FF")
+    static let electricViolet = UIColor(hex: "#8F00FF")
+    static let electricYellow = UIColor(hex: "#FFFF33")
+    static let emerald = UIColor(hex: "#50C878")
+    static let eminence = UIColor(hex: "#6C3082")
+    static let englishGreen = UIColor(hex: "#1B4D3E")
+    static let englishLavender = UIColor(hex: "#B48395")
+    static let englishRed = UIColor(hex: "#AB4B52")
+    static let englishVermillion = UIColor(hex: "#CC474B")
+    static let englishViolet = UIColor(hex: "#563C5C")
+    static let etonBlue = UIColor(hex: "#96C8A2")
+    static let eucalyptus = UIColor(hex: "#44D7A8")
+    static let fallow = UIColor(hex: "#C19A6B")
+    static let faluRed = UIColor(hex: "#801818")
+    static let fandango = UIColor(hex: "#B53389")
+    static let fandangoPink = UIColor(hex: "#DE5285")
+    static let fashionFuchsia = UIColor(hex: "#F400A1")
+    static let fawn = UIColor(hex: "#E5AA70")
+    static let feldgrau = UIColor(hex: "#4D5D53")
+    static let feldspar = UIColor(hex: "#FDD5B1")
+    static let fernGreen = UIColor(hex: "#4F7942")
+    static let ferrariRed = UIColor(hex: "#FF2800")
+    static let fieldDrab = UIColor(hex: "#6C541E")
+    static let fieryRose = UIColor(hex: "#FF5470")
+    static let firebrick = UIColor(hex: "#B22222")
+    static let fireEngineRed = UIColor(hex: "#CE2029")
+    static let flame = UIColor(hex: "#E25822")
+    static let flamingoPink = UIColor(hex: "#FC8EAC")
+    static let flattery = UIColor(hex: "#6B4423")
+    static let flavescent = UIColor(hex: "#F7E98E")
+    static let flax = UIColor(hex: "#EEDC82")
+    static let flirt = UIColor(hex: "#A2006D")
+    static let floralWhite = UIColor(hex: "#FFFAF0")
+    static let fluorescentOrange = UIColor(hex: "#FFBF00")
+    static let fluorescentPink = UIColor(hex: "#FF1493")
+    static let fluorescentYellow = UIColor(hex: "#CCFF00")
+    static let folly = UIColor(hex: "#FF004F")
+    static let forestGreenTraditional = UIColor(hex: "#014421")
+    static let forestGreenWeb = UIColor(hex: "#228B22")
+    static let frenchBeige = UIColor(hex: "#A67B5B")
+    static let frenchBistre = UIColor(hex: "#856D4D")
+    static let frenchBlue = UIColor(hex: "#0072BB")
+    static let frenchFuchsia = UIColor(hex: "#FD3F92")
+    static let frenchLilac = UIColor(hex: "#86608E")
+    static let frenchLime = UIColor(hex: "#9EFD38")
+    static let frenchMauve = UIColor(hex: "#D473D4")
+    static let frenchPink = UIColor(hex: "#FD6C9E")
+    static let frenchPlum = UIColor(hex: "#811453")
+    static let frenchPuce = UIColor(hex: "#4E1609")
+    static let frenchRaspberry = UIColor(hex: "#C72C48")
+    static let frenchRose = UIColor(hex: "#F64A8A")
+    static let frenchSkyBlue = UIColor(hex: "#77B5FE")
+    static let frenchViolet = UIColor(hex: "#8806CE")
+    static let frenchWine = UIColor(hex: "#AC1E44")
+    static let freshAir = UIColor(hex: "#A6E7FF")
+    static let frostbite = UIColor(hex: "#E936A7")
+    static let fuchsia = UIColor(hex: "#FF00FF")
+    static let fuchsiaCrayola = UIColor(hex: "#C154C1")
+    static let fuchsiaPink = UIColor(hex: "#FF77FF")
+    static let fuchsiaPurple = UIColor(hex: "#CC397B")
+    static let fuchsiaRose = UIColor(hex: "#C74375")
+    static let fulvous = UIColor(hex: "#E48400")
+    static let fuzzyWuzzy = UIColor(hex: "#CC6666")
+    static let gainsboro = UIColor(hex: "#DCDCDC")
+    static let gamboge = UIColor(hex: "#E49B0F")
+    static let gambogeOrangeBrown = UIColor(hex: "#996600")
+    static let gargoyleGas = UIColor(hex: "#FFDF46")
+    static let genericViridian = UIColor(hex: "#007F66")
+    static let ghostWhite = UIColor(hex: "#F8F8FF")
+    static let giantsClub = UIColor(hex: "#B05C52")
+    static let giantsOrange = UIColor(hex: "#FE5A1D")
+    static let ginger = UIColor(hex: "#B06500")
+    static let glaucous = UIColor(hex: "#6082B6")
+    static let glitter = UIColor(hex: "#E6E8FA")
+    static let glossyGrape = UIColor(hex: "#AB92B3")
+    static let gOGreen = UIColor(hex: "#00AB66")
+    static let goldMetallic = UIColor(hex: "#D4AF37")
+    static let goldWebGolden = UIColor(hex: "#FFD700")
+    static let goldFusion = UIColor(hex: "#85754E")
+    static let goldenBrown = UIColor(hex: "#996515")
+    static let goldenPoppy = UIColor(hex: "#FCC200")
+    static let goldenYellow = UIColor(hex: "#FFDF00")
+    static let goldenrod = UIColor(hex: "#DAA520")
+    static let graniteGray = UIColor(hex: "#676767")
+    static let grannySmithApple = UIColor(hex: "#A8E4A0")
+    static let grape = UIColor(hex: "#6F2DA8")
+    static let gray = UIColor(hex: "#808080")
+    static let grayHTMLCSSGray = UIColor(hex: "#808080")
+    static let grayX11Gray = UIColor(hex: "#BEBEBE")
+    static let grayAsparagus = UIColor(hex: "#465945")
+    static let grayBlue = UIColor(hex: "#8C92AC")
+    static let greenColorWheelX11Green = UIColor(hex: "#00FF00")
+    static let greenCrayola = UIColor(hex: "#1CAC78")
+    static let greenHTMLCSSColor = UIColor(hex: "#008000")
+    static let greenMunsell = UIColor(hex: "#00A877")
+    static let greenNCS = UIColor(hex: "#009F6B")
+    static let greenPantone = UIColor(hex: "#00AD43")
+    static let greenPigment = UIColor(hex: "#00A550")
+    static let greenRYB = UIColor(hex: "#66B032")
+    static let greenBlue = UIColor(hex: "#1164B4")
+    static let greenCyan = UIColor(hex: "#009966")
+    static let greenLizard = UIColor(hex: "#A7F432")
+    static let greenSheen = UIColor(hex: "#6EAEA1")
+    static let greenYellow = UIColor(hex: "#ADFF2F")
+    static let grizzly = UIColor(hex: "#885818")
+    static let grullo = UIColor(hex: "#A99A86")
+    static let guppieGreen = UIColor(hex: "#00FF7F")
+    static let gunmetal = UIColor(hex: "#2a3439")
+    static let halayàÚbe = UIColor(hex: "#663854")
+    static let hanBlue = UIColor(hex: "#446CCF")
+    static let hanPurple = UIColor(hex: "#5218FA")
+    static let hansaYellow = UIColor(hex: "#E9D66B")
+    static let harlequin = UIColor(hex: "#3FFF00")
+    static let harlequinGreen = UIColor(hex: "#46CB18")
+    static let harletdCrimson = UIColor(hex: "#C90016")
+    static let harvestGold = UIColor(hex: "#DA9100")
+    static let heartGold = UIColor(hex: "#808000")
+    static let heatWave = UIColor(hex: "#FF7A00")
+    static let heidelbergRed = UIColor(hex: "#960018")
+    static let heliotrope = UIColor(hex: "#DF73FF")
+    static let heliotropeGray = UIColor(hex: "#AA98A9")
+    static let heliotropeMagenta = UIColor(hex: "#AA00BB")
+    static let hollywoodCerise = UIColor(hex: "#F400A1")
+    static let honeydew = UIColor(hex: "#F0FFF0")
+    static let honoluluBlue = UIColor(hex: "#006DB0")
+    static let hookersGreen = UIColor(hex: "#49796B")
+    static let hotMagenta = UIColor(hex: "#FF1DCE")
+    static let hotPink = UIColor(hex: "#FF69B4")
+    static let hunterGreen = UIColor(hex: "#355E3B")
+    static let iceberg = UIColor(hex: "#71A6D2")
+    static let icterine = UIColor(hex: "#FCF75E")
+    static let iguanaGreen = UIColor(hex: "#71BC78")
+    static let illuminatingEmerald = UIColor(hex: "#319177")
+    static let imperial = UIColor(hex: "#602F6B")
+    static let imperialBlue = UIColor(hex: "#002395")
+    static let imperialPurple = UIColor(hex: "#66023C")
+    static let imperialRed = UIColor(hex: "#ED2939")
+    static let inchworm = UIColor(hex: "#B2EC5D")
+    static let independence = UIColor(hex: "#4C516D")
+    static let indiaGreen = UIColor(hex: "#138808")
+    static let indianRed = UIColor(hex: "#CD5C5C")
+    static let indianYellow = UIColor(hex: "#E3A857")
+    static let indigo = UIColor(hex: "#4B0082")
+    static let indigoDye = UIColor(hex: "#091F92")
+    static let indigoWeb = UIColor(hex: "#4B0082")
+    static let infraRed = UIColor(hex: "#FF496C")
+    static let interdimensionalBlue = UIColor(hex: "#360CCC")
+    static let internationalKleinBlue = UIColor(hex: "#002FA7")
+    static let internationalOrangeAerospace = UIColor(hex: "#FF4F00")
+    static let internationalOrangeEngineering = UIColor(hex: "#BA160C")
+    static let internationalOrangeGoldenGateBridge = UIColor(hex: "#C0362C")
+    static let iris = UIColor(hex: "#5A4FCF")
+    static let irresistible = UIColor(hex: "#B3446C")
+    static let isabelline = UIColor(hex: "#F4F0EC")
+    static let islamicGreen = UIColor(hex: "#009000")
+    static let italianSkyBlue = UIColor(hex: "#B2FFFF")
+    static let ivory = UIColor(hex: "#FFFFF0")
+    static let jade = UIColor(hex: "#00A86B")
+    static let japaneseCarmine = UIColor(hex: "#9D2933")
+    static let japaneseIndigo = UIColor(hex: "#264348")
+    static let japaneseViolet = UIColor(hex: "#5B3256")
+    static let jasmine = UIColor(hex: "#F8DE7E")
+    static let jasper = UIColor(hex: "#D73B3E")
+    static let jazzberryJam = UIColor(hex: "#A50B5E")
+    static let jellyBean = UIColor(hex: "#DA614E")
+    static let jet = UIColor(hex: "#343434")
+    static let jonquil = UIColor(hex: "#F4CA16")
+    static let jordyBlue = UIColor(hex: "#8AB9F1")
+    static let juneBud = UIColor(hex: "#BDDA57")
+    static let jungleGreen = UIColor(hex: "#29AB87")
+    static let kellyGreen = UIColor(hex: "#4CBB17")
+    static let kenyanCopper = UIColor(hex: "#7C1C05")
+    static let keppel = UIColor(hex: "#3AB09E")
+    static let keyLime = UIColor(hex: "#E8F48C")
+    static let khakiHTMLCSSKhaki = UIColor(hex: "#C3B091")
+    static let khakiX11LightKhaki = UIColor(hex: "#F0E68C")
+    static let kiwi = UIColor(hex: "#8EE53F")
+    static let kobe = UIColor(hex: "#882D17")
+    static let kobi = UIColor(hex: "#E79FC4")
+    static let kobicha = UIColor(hex: "#6B4423")
+    static let kombuGreen = UIColor(hex: "#354230")
+    static let kSUPurple = UIColor(hex: "#512888")
+    static let kUCrimson = UIColor(hex: "#E8000D")
+    static let laSalleGreen = UIColor(hex: "#087830")
+    static let languidLavender = UIColor(hex: "#D6CADD")
+    static let lapisLazuli = UIColor(hex: "#26619C")
+    static let laserLemon = UIColor(hex: "#FFFF66")
+    static let laurelGreen = UIColor(hex: "#A9BA9D")
+    static let lava = UIColor(hex: "#CF1020")
+    static let lavenderFloral = UIColor(hex: "#B57EDC")
+    static let lavenderWeb = UIColor(hex: "#E6E6FA")
+    static let lavenderBlue = UIColor(hex: "#CCCCFF")
+    static let lavenderBlush = UIColor(hex: "#FFF0F5")
+    static let lavenderGray = UIColor(hex: "#C4C3D0")
+    static let lavenderIndigo = UIColor(hex: "#9457EB")
+    static let lavenderMagenta = UIColor(hex: "#EE82EE")
+    static let lavenderMist = UIColor(hex: "#E6E6FA")
+    static let lavenderPink = UIColor(hex: "#FBAED2")
+    static let lavenderPurple = UIColor(hex: "#967BB6")
+    static let lavenderRose = UIColor(hex: "#FBA0E3")
+    static let lawnGreen = UIColor(hex: "#7CFC00")
+    static let lemon = UIColor(hex: "#FFF700")
+    static let lemonChiffon = UIColor(hex: "#FFFACD")
+    static let lemonCurry = UIColor(hex: "#CCA01D")
+    static let lemonGlacier = UIColor(hex: "#FDFF00")
+    static let lemonLime = UIColor(hex: "#E3FF00")
+    static let lemonMeringue = UIColor(hex: "#F6EABE")
+    static let lemonYellow = UIColor(hex: "#FFF44F")
+    static let licorice = UIColor(hex: "#1A1110")
+    static let liberty = UIColor(hex: "#545AA7")
+    static let lightApricot = UIColor(hex: "#FDD5B1")
+    static let lightBlue = UIColor(hex: "#ADD8E6")
+    static let lightBrown = UIColor(hex: "#B5651D")
+    static let lightCarminePink = UIColor(hex: "#E66771")
+    static let lightCobaltBlue = UIColor(hex: "#88ACE0")
+    static let lightCoral = UIColor(hex: "#F08080")
+    static let lightCornflowerBlue = UIColor(hex: "#93CCEA")
+    static let lightCrimson = UIColor(hex: "#F56991")
+    static let lightCyan = UIColor(hex: "#E0FFFF")
+    static let lightDeepPink = UIColor(hex: "#FF5CCD")
+    static let lightFrenchBeige = UIColor(hex: "#C8AD7F")
+    static let lightFuchsiaPink = UIColor(hex: "#F984EF")
+    static let lightGoldenrodYellow = UIColor(hex: "#FAFAD2")
+    static let lightGray = UIColor(hex: "#D3D3D3")
+    static let lightGrayishMagenta = UIColor(hex: "#CC99CC")
+    static let lightGreen = UIColor(hex: "#90EE90")
+    static let lightHotPink = UIColor(hex: "#FFB3DE")
+    static let lightKhaki = UIColor(hex: "#F0E68C")
+    static let lightMediumOrchid = UIColor(hex: "#D39BCB")
+    static let lightMossGreen = UIColor(hex: "#ADDFAD")
+    static let lightOrange = UIColor(hex: "#FED8B1")
+    static let lightOrchid = UIColor(hex: "#E6A8D7")
+    static let lightPastelPurple = UIColor(hex: "#B19CD9")
+    static let lightPink = UIColor(hex: "#FFB6C1")
+    static let lightRedOchre = UIColor(hex: "#E97451")
+    static let lightSalmon = UIColor(hex: "#FFA07A")
+    static let lightSalmonPink = UIColor(hex: "#FF9999")
+    static let lightSeaGreen = UIColor(hex: "#20B2AA")
+    static let lightSkyBlue = UIColor(hex: "#87CEFA")
+    static let lightSlateGray = UIColor(hex: "#778899")
+    static let lightSteelBlue = UIColor(hex: "#B0C4DE")
+    static let lightTaupe = UIColor(hex: "#B38B6D")
+    static let lightThulianPink = UIColor(hex: "#E68FAC")
+    static let lightYellow = UIColor(hex: "#FFFFE0")
+    static let lilac = UIColor(hex: "#C8A2C8")
+    static let lilacLuster = UIColor(hex: "#AE98AA")
+    static let limeColorWheel = UIColor(hex: "#BFFF00")
+    static let limeWebX11Green = UIColor(hex: "#00FF00")
+    static let limeGreen = UIColor(hex: "#32CD32")
+    static let limerick = UIColor(hex: "#9DC209")
+    static let lincolnGreen = UIColor(hex: "#195905")
+    static let linen = UIColor(hex: "#FAF0E6")
+    static let loeen = UIColor(hex: "#15F2FD")
+    static let liseranPurple = UIColor(hex: "#DE6FA1")
+    static let littleBoyBlue = UIColor(hex: "#6CA0DC")
+    static let liver = UIColor(hex: "#674C47")
+    static let liverDogs = UIColor(hex: "#B86D29")
+    static let liverOrgan = UIColor(hex: "#6C2E1F")
+    static let liverChestnut = UIColor(hex: "#987456")
+    static let livid = UIColor(hex: "#6699CC")
+    static let lumber = UIColor(hex: "#FFE4CD")
+    static let lust = UIColor(hex: "#E62020")
+    static let maastrichtBlue = UIColor(hex: "#001C3D")
+    static let macaroniAndCheese = UIColor(hex: "#FFBD88")
+    static let madderLake = UIColor(hex: "#CC3336")
+    static let magenta = UIColor(hex: "#FF00FF")
+    static let magentaCrayola = UIColor(hex: "#FF55A3")
+    static let magentaDye = UIColor(hex: "#CA1F7B")
+    static let magentaPantone = UIColor(hex: "#D0417E")
+    static let magentaProcess = UIColor(hex: "#FF0090")
+    static let magentaHaze = UIColor(hex: "#9F4576")
+    static let magentaPink = UIColor(hex: "#CC338B")
+    static let magicMint = UIColor(hex: "#AAF0D1")
+    static let magicPotion = UIColor(hex: "#FF4466")
+    static let magnolia = UIColor(hex: "#F8F4FF")
+    static let mahogany = UIColor(hex: "#C04000")
+    static let maize = UIColor(hex: "#FBEC5D")
+    static let majorelleBlue = UIColor(hex: "#6050DC")
+    static let malachite = UIColor(hex: "#0BDA51")
+    static let manatee = UIColor(hex: "#979AAA")
+    static let mandarin = UIColor(hex: "#F37A48")
+    static let mangoTango = UIColor(hex: "#FF8243")
+    static let mantis = UIColor(hex: "#74C365")
+    static let mardiGras = UIColor(hex: "#880085")
+    static let marigold = UIColor(hex: "#EAA221")
+    static let maroonCrayola = UIColor(hex: "#C32148")
+    static let maroonHTMLCSS = UIColor(hex: "#800000")
+    static let maroonX11 = UIColor(hex: "#B03060")
+    static let mauve = UIColor(hex: "#E0B0FF")
+    static let mauveTaupe = UIColor(hex: "#915F6D")
+    static let mauvelous = UIColor(hex: "#EF98AA")
+    static let maximumBlue = UIColor(hex: "#47ABCC")
+    static let maximumBlueGreen = UIColor(hex: "#30BFBF")
+    static let maximumBluePurple = UIColor(hex: "#ACACE6")
+    static let maximumGreen = UIColor(hex: "#5E8C31")
+    static let maximumGreenYellow = UIColor(hex: "#D9E650")
+    static let maximumPurple = UIColor(hex: "#733380")
+    static let maximumRed = UIColor(hex: "#D92121")
+    static let maximumRedPurple = UIColor(hex: "#A63A79")
+    static let maximumYellow = UIColor(hex: "#FAFA37")
+    static let maximumYellowRed = UIColor(hex: "#F2BA49")
+    static let mayGreen = UIColor(hex: "#4C9141")
+    static let mayaBlue = UIColor(hex: "#73C2FB")
+    static let meatBrown = UIColor(hex: "#E5B73B")
+    static let mediumAquamarine = UIColor(hex: "#66DDAA")
+    static let mediumBlue = UIColor(hex: "#0000CD")
+    static let mediumCandyAppleRed = UIColor(hex: "#E2062C")
+    static let mediumCarmine = UIColor(hex: "#AF4035")
+    static let mediumChampagne = UIColor(hex: "#F3E5AB")
+    static let mediumElectricBlue = UIColor(hex: "#035096")
+    static let mediumJungleGreen = UIColor(hex: "#1C352D")
+    static let mediumLavenderMagenta = UIColor(hex: "#DDA0DD")
+    static let mediumOrchid = UIColor(hex: "#BA55D3")
+    static let mediumPersianBlue = UIColor(hex: "#0067A5")
+    static let mediumPurple = UIColor(hex: "#9370DB")
+    static let mediumRedViolet = UIColor(hex: "#BB3385")
+    static let mediumRuby = UIColor(hex: "#AA4069")
+    static let mediumSeaGreen = UIColor(hex: "#3CB371")
+    static let mediumSkyBlue = UIColor(hex: "#80DAEB")
+    static let mediumSlateBlue = UIColor(hex: "#7B68EE")
+    static let mediumSpringBud = UIColor(hex: "#C9DC87")
+    static let mediumSpringGreen = UIColor(hex: "#00FA9A")
+    static let mediumTaupe = UIColor(hex: "#674C47")
+    static let mediumTurquoise = UIColor(hex: "#48D1CC")
+    static let mediumTuscanRed = UIColor(hex: "#79443B")
+    static let mediumVermilion = UIColor(hex: "#D9603B")
+    static let mediumVioletRed = UIColor(hex: "#C71585")
+    static let mellowApricot = UIColor(hex: "#F8B878")
+    static let mellowYellow = UIColor(hex: "#F8DE7E")
+    static let melon = UIColor(hex: "#FDBCB4")
+    static let metallicSeaweed = UIColor(hex: "#0A7E8C")
+    static let metallicSunburst = UIColor(hex: "#9C7C38")
+    static let mexicanPink = UIColor(hex: "#E4007C")
+    static let middleBlue = UIColor(hex: "#7ED4E6")
+    static let middleBlueGreen = UIColor(hex: "#8DD9CC")
+    static let middleBluePurple = UIColor(hex: "#8B72BE")
+    static let middleGreen = UIColor(hex: "#4D8C57")
+    static let middleGreenYellow = UIColor(hex: "#ACBF60")
+    static let middlePurple = UIColor(hex: "#D982B5")
+    static let middleRed = UIColor(hex: "#E58E73")
+    static let middleRedPurple = UIColor(hex: "#A55353")
+    static let middleYellow = UIColor(hex: "#FFEB00")
+    static let middleYellowRed = UIColor(hex: "#ECB176")
+    static let midnight = UIColor(hex: "#702670")
+    static let midnightBlue = UIColor(hex: "#191970")
+    static let midnightGreenEagleGreen = UIColor(hex: "#004953")
+    static let mikadoYellow = UIColor(hex: "#FFC40C")
+    static let milk = UIColor(hex: "#FDFFF5")
+    static let mimiPink = UIColor(hex: "#FFDAE9")
+    static let mindaro = UIColor(hex: "#E3F988")
+    static let ming = UIColor(hex: "#36747D")
+    static let minionYellow = UIColor(hex: "#F5E050")
+    static let mint = UIColor(hex: "#3EB489")
+    static let mintCream = UIColor(hex: "#F5FFFA")
+    static let mintGreen = UIColor(hex: "#98FF98")
+    static let mistyMoss = UIColor(hex: "#BBB477")
+    static let mistyRose = UIColor(hex: "#FFE4E1")
+    static let moccasin = UIColor(hex: "#FAEBD7")
+    static let modeBeige = UIColor(hex: "#967117")
+    static let moonstoneBlue = UIColor(hex: "#73A9C2")
+    static let mordantRed19 = UIColor(hex: "#AE0C00")
+    static let morningBlue = UIColor(hex: "#8DA399")
+    static let mossGreen = UIColor(hex: "#8A9A5B")
+    static let mountainMeadow = UIColor(hex: "#30BA8F")
+    static let mountbattenPink = UIColor(hex: "#997A8D")
+    static let mSUGreen = UIColor(hex: "#18453B")
+    static let mughalGreen = UIColor(hex: "#306030")
+    static let mulberry = UIColor(hex: "#C54B8C")
+    static let mummysTomb = UIColor(hex: "#828E84")
+    static let mustard = UIColor(hex: "#FFDB58")
+    static let myrtleGreen = UIColor(hex: "#317873")
+    static let mystic = UIColor(hex: "#D65282")
+    static let mysticMaroon = UIColor(hex: "#AD4379")
+    static let nadeshikoPink = UIColor(hex: "#F6ADC6")
+    static let napierGreen = UIColor(hex: "#2A8000")
+    static let naplesYellow = UIColor(hex: "#FADA5E")
+    static let navajoWhite = UIColor(hex: "#FFDEAD")
+    static let navy = UIColor(hex: "#000080")
+    static let navyPurple = UIColor(hex: "#9457EB")
+    static let neonCarrot = UIColor(hex: "#FFA343")
+    static let neonFuchsia = UIColor(hex: "#FE4164")
+    static let neonGreen = UIColor(hex: "#39FF14")
+    static let newCar = UIColor(hex: "#214FC6")
+    static let newYorkPink = UIColor(hex: "#D7837F")
+    static let nickel = UIColor(hex: "#727472")
+    static let nonPhotoBlue = UIColor(hex: "#A4DDED")
+    static let northTexasGreen = UIColor(hex: "#059033")
+    static let nyanza = UIColor(hex: "#E9FFDB")
+    static let oceanBlue = UIColor(hex: "#4F42B5")
+    static let oceanBoatBlue = UIColor(hex: "#0077BE")
+    static let oceanGreen = UIColor(hex: "#48BF91")
+    static let ochre = UIColor(hex: "#CC7722")
+    static let officeGreen = UIColor(hex: "#008000")
+    static let ogreOdor = UIColor(hex: "#FD5240")
+    static let oldBurgundy = UIColor(hex: "#43302E")
+    static let oldGold = UIColor(hex: "#CFB53B")
+    static let oldHeliotrope = UIColor(hex: "#563C5C")
+    static let oldLace = UIColor(hex: "#FDF5E6")
+    static let oldLavender = UIColor(hex: "#796878")
+    static let oldMauve = UIColor(hex: "#673147")
+    static let oldMossGreen = UIColor(hex: "#867E36")
+    static let oldRose = UIColor(hex: "#C08081")
+    static let oldSilver = UIColor(hex: "#848482")
+    static let olive = UIColor(hex: "#808000")
+    static let oliveDrab3 = UIColor(hex: "#6B8E23")
+    static let oliveDrab7 = UIColor(hex: "#3C341F")
+    static let olivine = UIColor(hex: "#9AB973")
+    static let onyx = UIColor(hex: "#353839")
+    static let operaMauve = UIColor(hex: "#B784A7")
+    static let orangeColorWheel = UIColor(hex: "#FF7F00")
+    static let orangeCrayola = UIColor(hex: "#FF7538")
+    static let orangePantone = UIColor(hex: "#FF5800")
+    static let orangeRYB = UIColor(hex: "#FB9902")
+    static let orangeWeb = UIColor(hex: "#FFA500")
+    static let orangePeel = UIColor(hex: "#FF9F00")
+    static let orangeRed = UIColor(hex: "#FF4500")
+    static let orangeSoda = UIColor(hex: "#FA5B3D")
+    static let orangeYellow = UIColor(hex: "#F8D568")
+    static let orchid = UIColor(hex: "#DA70D6")
+    static let orchidPink = UIColor(hex: "#F2BDCD")
+    static let oriolesOrange = UIColor(hex: "#FB4F14")
+    static let otterBrown = UIColor(hex: "#654321")
+    static let outerSpace = UIColor(hex: "#414A4C")
+    static let outrageousOrange = UIColor(hex: "#FF6E4A")
+    static let oxfordBlue = UIColor(hex: "#002147")
+    static let oUCrimsonRed = UIColor(hex: "#990000")
+    static let pacificBlue = UIColor(hex: "#1CA9C9")
+    static let pakistanGreen = UIColor(hex: "#006600")
+    static let palatinateBlue = UIColor(hex: "#273BE2")
+    static let palatinatePurple = UIColor(hex: "#682860")
+    static let paleAqua = UIColor(hex: "#BCD4E6")
+    static let paleBlue = UIColor(hex: "#AFEEEE")
+    static let paleBrown = UIColor(hex: "#987654")
+    static let paleCarmine = UIColor(hex: "#AF4035")
+    static let paleCerulean = UIColor(hex: "#9BC4E2")
+    static let paleChestnut = UIColor(hex: "#DDADAF")
+    static let paleCopper = UIColor(hex: "#DA8A67")
+    static let paleCornflowerBlue = UIColor(hex: "#ABCDEF")
+    static let paleCyan = UIColor(hex: "#87D3F8")
+    static let paleGold = UIColor(hex: "#E6BE8A")
+    static let paleGoldenrod = UIColor(hex: "#EEE8AA")
+    static let paleGreen = UIColor(hex: "#98FB98")
+    static let paleLavender = UIColor(hex: "#DCD0FF")
+    static let paleMagenta = UIColor(hex: "#F984E5")
+    static let paleMagentaPink = UIColor(hex: "#FF99CC")
+    static let palePink = UIColor(hex: "#FADADD")
+    static let palePlum = UIColor(hex: "#DDA0DD")
+    static let paleRedViolet = UIColor(hex: "#DB7093")
+    static let paleRobinEggBlue = UIColor(hex: "#96DED1")
+    static let paleSilver = UIColor(hex: "#C9C0BB")
+    static let paleSpringBud = UIColor(hex: "#ECEBBD")
+    static let paletaupe = UIColor(hex: "#BC987E")
+    static let paleturquoise = UIColor(hex: "#AFEEEE")
+    static let paleViolet = UIColor(hex: "#CC99FF")
+    static let paleVioletRed = UIColor(hex: "#DB7093")
+    static let palmLeaf = UIColor(hex: "#6F9940")
+    static let pansyPurple = UIColor(hex: "#78184A")
+    static let paoloVeroneseGreen = UIColor(hex: "#009B7D")
+    static let papayaWhip = UIColor(hex: "#FFEFD5")
+    static let paradisePink = UIColor(hex: "#E63E62")
+    static let parisGreen = UIColor(hex: "#50C878")
+    static let parrotPink = UIColor(hex: "#D998A0")
+    static let pastelBlue = UIColor(hex: "#AEC6CF")
+    static let pastelBrown = UIColor(hex: "#836953")
+    static let pastelGray = UIColor(hex: "#CFCFC4")
+    static let pastelGreen = UIColor(hex: "#77DD77")
+    static let pastelMagenta = UIColor(hex: "#F49AC2")
+    static let pastelOrange = UIColor(hex: "#FFB347")
+    static let pastelPink = UIColor(hex: "#DEA5A4")
+    static let pastelPurple = UIColor(hex: "#B39EB5")
+    static let pastelRed = UIColor(hex: "#FF6961")
+    static let pastelViolet = UIColor(hex: "#CB99C9")
+    static let pastelYellow = UIColor(hex: "#FDFD96")
+    static let patriarch = UIColor(hex: "#800080")
+    static let paynesGrey = UIColor(hex: "#536878")
+    static let peach = UIColor(hex: "#FFE5B4")
+    static let peachOrange = UIColor(hex: "#FFCC99")
+    static let peachPuff = UIColor(hex: "#FFDAB9")
+    static let peachYellow = UIColor(hex: "#FADFAD")
+    static let pear = UIColor(hex: "#D1E231")
+    static let pearl = UIColor(hex: "#EAE0C8")
+    static let pearlAqua = UIColor(hex: "#88D8C0")
+    static let pearlyPurple = UIColor(hex: "#B768A2")
+    static let peridot = UIColor(hex: "#E6E200")
+    static let periwinkle = UIColor(hex: "#CCCCFF")
+    static let permanentGeraniumLake = UIColor(hex: "#E12C2C")
+    static let persianBlue = UIColor(hex: "#1C39BB")
+    static let persianGreen = UIColor(hex: "#00A693")
+    static let persianIndigo = UIColor(hex: "#32127A")
+    static let persianOrange = UIColor(hex: "#D99058")
+    static let persianPink = UIColor(hex: "#F77FBE")
+    static let persianPlum = UIColor(hex: "#701C1C")
+    static let persianRed = UIColor(hex: "#CC3333")
+    static let persianRose = UIColor(hex: "#FE28A2")
+    static let persimmon = UIColor(hex: "#EC5800")
+    static let peru = UIColor(hex: "#CD853F")
+    static let pewterBlue = UIColor(hex: "#8BA8B7")
+    static let phlox = UIColor(hex: "#DF00FF")
+    static let phthaloBlue = UIColor(hex: "#000F89")
+    static let phthaloGreen = UIColor(hex: "#123524")
+    static let pictonBlue = UIColor(hex: "#45B1E8")
+    static let pictorialCarmine = UIColor(hex: "#C30B4E")
+    static let piggyPink = UIColor(hex: "#FDDDE6")
+    static let pineGreen = UIColor(hex: "#01796F")
+    static let pineapple = UIColor(hex: "#563C5C")
+    static let pink = UIColor(hex: "#FFC0CB")
+    static let pinkPantone = UIColor(hex: "#D74894")
+    static let pinkFlamingo = UIColor(hex: "#FC74FD")
+    static let pinkLace = UIColor(hex: "#FFDDF4")
+    static let pinkLavender = UIColor(hex: "#D8B2D1")
+    static let pinkOrange = UIColor(hex: "#FF9966")
+    static let pinkPearl = UIColor(hex: "#E7ACCF")
+    static let pinkRaspberry = UIColor(hex: "#980036")
+    static let pinkSherbet = UIColor(hex: "#F78FA7")
+    static let pistachio = UIColor(hex: "#93C572")
+    static let pixiePowder = UIColor(hex: "#391285")
+    static let platinum = UIColor(hex: "#E5E4E2")
+    static let plum = UIColor(hex: "#8E4585")
+    static let plumWeb = UIColor(hex: "#DDA0DD")
+    static let plumpPurple = UIColor(hex: "#5946B2")
+    static let polishedPine = UIColor(hex: "#5DA493")
+    static let pompAndPower = UIColor(hex: "#86608E")
+    static let popstar = UIColor(hex: "#BE4F62")
+    static let portlandOrange = UIColor(hex: "#FF5A36")
+    static let powderBlue = UIColor(hex: "#B0E0E6")
+    static let princessPerfume = UIColor(hex: "#FF85CF")
+    static let princetonOrange = UIColor(hex: "#F58025")
+    static let prune = UIColor(hex: "#701C1C")
+    static let prussianBlue = UIColor(hex: "#003153")
+    static let psychedelicPurple = UIColor(hex: "#DF00FF")
+    static let puce = UIColor(hex: "#CC8899")
+    static let puceRed = UIColor(hex: "#722F37")
+    static let pullmanBrownUPSBrown = UIColor(hex: "#644117")
+    static let pullmanGreen = UIColor(hex: "#3B331C")
+    static let pumpkin = UIColor(hex: "#FF7518")
+    static let purpleHTML = UIColor(hex: "#800080")
+    static let purpleMunsell = UIColor(hex: "#9F00C5")
+    static let purpleX11 = UIColor(hex: "#A020F0")
+    static let purpleHeart = UIColor(hex: "#69359C")
+    static let purpleMountainMajesty = UIColor(hex: "#9678B6")
+    static let purpleNavy = UIColor(hex: "#4E5180")
+    static let purplePizzazz = UIColor(hex: "#FE4EDA")
+    static let purplePlum = UIColor(hex: "#9C51B6")
+    static let purpletaupe = UIColor(hex: "#50404D")
+    static let purpureus = UIColor(hex: "#9A4EAE")
+    static let quartz = UIColor(hex: "#51484F")
+    static let queenBlue = UIColor(hex: "#436B95")
+    static let queenPink = UIColor(hex: "#E8CCD7")
+    static let quickSilver = UIColor(hex: "#A6A6A6")
+    static let quinacridoneMagenta = UIColor(hex: "#8E3A59")
+    static let rackley = UIColor(hex: "#5D8AA8")
+    static let radicalRed = UIColor(hex: "#FF355E")
+    static let raisinBlack = UIColor(hex: "#242124")
+    static let rajah = UIColor(hex: "#FBAB60")
+    static let raspberry = UIColor(hex: "#E30B5D")
+    static let raspberryGlace = UIColor(hex: "#915F6D")
+    static let raspberryPink = UIColor(hex: "#E25098")
+    static let raspberryRose = UIColor(hex: "#B3446C")
+    static let rawSienna = UIColor(hex: "#D68A59")
+    static let rawUmber = UIColor(hex: "#826644")
+    static let razzleDazzleRose = UIColor(hex: "#FF33CC")
+    static let razzmatazz = UIColor(hex: "#E3256B")
+    static let razzmicBerry = UIColor(hex: "#8D4E85")
+    static let rebeccaPurple = UIColor(hex: "#663399")
+    static let red = UIColor(hex: "#FF0000")
+    static let redCrayola = UIColor(hex: "#EE204D")
+    static let redMunsell = UIColor(hex: "#F2003C")
+    static let redNCS = UIColor(hex: "#C40233")
+    static let redPantone = UIColor(hex: "#ED2939")
+    static let redPigment = UIColor(hex: "#ED1C24")
+    static let redRYB = UIColor(hex: "#FE2712")
+    static let redBrown = UIColor(hex: "#A52A2A")
+    static let redDevil = UIColor(hex: "#860111")
+    static let redOrange = UIColor(hex: "#FF5349")
+    static let redPurple = UIColor(hex: "#E40078")
+    static let redSalsa = UIColor(hex: "#FD3A4A")
+    static let redViolet = UIColor(hex: "#C71585")
+    static let redwood = UIColor(hex: "#A45A52")
+    static let regalia = UIColor(hex: "#522D80")
+    static let registrationBlack = UIColor(hex: "#000000")
+    static let resolutionBlue = UIColor(hex: "#002387")
+    static let rhythm = UIColor(hex: "#777696")
+    static let richBlack = UIColor(hex: "#004040")
+    static let richBlackFOGRA29 = UIColor(hex: "#010B13")
+    static let richBlackFOGRA39 = UIColor(hex: "#010203")
+    static let richBrilliantLavender = UIColor(hex: "#F1A7FE")
+    static let richCarmine = UIColor(hex: "#D70040")
+    static let richElectricBlue = UIColor(hex: "#0892D0")
+    static let richLavender = UIColor(hex: "#A76BCF")
+    static let richLilac = UIColor(hex: "#B666D2")
+    static let richMaroon = UIColor(hex: "#B03060")
+    static let rifleGreen = UIColor(hex: "#444C38")
+    static let roastCoffee = UIColor(hex: "#704241")
+    static let robinEggBlue = UIColor(hex: "#00CCCC")
+    static let rocketMetallic = UIColor(hex: "#8A7F80")
+    static let romanSilver = UIColor(hex: "#838996")
+    static let rose = UIColor(hex: "#FF007F")
+    static let roseBonbon = UIColor(hex: "#F9429E")
+    static let roseDust = UIColor(hex: "#9E5E6F")
+    static let roseEbony = UIColor(hex: "#674846")
+    static let roseGold = UIColor(hex: "#B76E79")
+    static let roseMadder = UIColor(hex: "#E32636")
+    static let rosePink = UIColor(hex: "#FF66CC")
+    static let roseQuartz = UIColor(hex: "#AA98A9")
+    static let roseRed = UIColor(hex: "#C21E56")
+    static let roseTaupe = UIColor(hex: "#905D5D")
+    static let roseVale = UIColor(hex: "#AB4E52")
+    static let rosewood = UIColor(hex: "#65000B")
+    static let rossoCorsa = UIColor(hex: "#D40000")
+    static let rosyBrown = UIColor(hex: "#BC8F8F")
+    static let royalAzure = UIColor(hex: "#0038A8")
+    static let royalBlue = UIColor(hex: "#002366")
+    static let royalFuchsia = UIColor(hex: "#CA2C92")
+    static let royalPurple = UIColor(hex: "#7851A9")
+    static let royalYellow = UIColor(hex: "#FADA5E")
+    static let ruber = UIColor(hex: "#CE4676")
+    static let rubineRed = UIColor(hex: "#D10056")
+    static let ruby = UIColor(hex: "#E0115F")
+    static let rubyRed = UIColor(hex: "#9B111E")
+    static let ruddy = UIColor(hex: "#FF0028")
+    static let ruddyBrown = UIColor(hex: "#BB6528")
+    static let ruddyPink = UIColor(hex: "#E18E96")
+    static let rufous = UIColor(hex: "#A81C07")
+    static let russet = UIColor(hex: "#80461B")
+    static let russianGreen = UIColor(hex: "#679267")
+    static let russianViolet = UIColor(hex: "#32174D")
+    static let rust = UIColor(hex: "#B7410E")
+    static let rustyRed = UIColor(hex: "#DA2C43")
+    static let sacramentoStateGreen = UIColor(hex: "#00563F")
+    static let saddleBrown = UIColor(hex: "#8B4513")
+    static let safetyOrange = UIColor(hex: "#FF7800")
+    static let safetyOrangeBlazeOrange = UIColor(hex: "#FF6700")
+    static let safetyYellow = UIColor(hex: "#EED202")
+    static let saffron = UIColor(hex: "#F4C430")
+    static let sage = UIColor(hex: "#BCB88A")
+    static let stPatricksBlue = UIColor(hex: "#23297A")
+    static let salmon = UIColor(hex: "#FA8072")
+    static let salmonPink = UIColor(hex: "#FF91A4")
+    static let sand = UIColor(hex: "#C2B280")
+    static let sandDune = UIColor(hex: "#967117")
+    static let sandstorm = UIColor(hex: "#ECD540")
+    static let sandyBrown = UIColor(hex: "#F4A460")
+    static let sandyTan = UIColor(hex: "#FDD9B5")
+    static let sandyTaupe = UIColor(hex: "#967117")
+    static let sangria = UIColor(hex: "#92000A")
+    static let sapGreen = UIColor(hex: "#507D2A")
+    static let sapphire = UIColor(hex: "#0F52BA")
+    static let sapphireBlue = UIColor(hex: "#0067A5")
+    static let sasquatchSocks = UIColor(hex: "#FF4681")
+    static let satinSheenGold = UIColor(hex: "#CBA135")
+    static let scarlet = UIColor(hex: "#FF2400")
+    static let schaussPink = UIColor(hex: "#FF91AF")
+    static let schoolBusYellow = UIColor(hex: "#FFD800")
+    static let screaminGreen = UIColor(hex: "#66FF66")
+    static let seaBlue = UIColor(hex: "#006994")
+    static let seaFoamGreen = UIColor(hex: "#9FE2BF")
+    static let seaGreen = UIColor(hex: "#2E8B57")
+    static let seaSerpent = UIColor(hex: "#4BC7CF")
+    static let sealBrown = UIColor(hex: "#59260B")
+    static let seashell = UIColor(hex: "#FFF5EE")
+    static let selectiveYellow = UIColor(hex: "#FFBA00")
+    static let sepia = UIColor(hex: "#704214")
+    static let shadow = UIColor(hex: "#8A795D")
+    static let shadowBlue = UIColor(hex: "#778BA5")
+    static let shampoo = UIColor(hex: "#FFCFF1")
+    static let shamrockGreen = UIColor(hex: "#009E60")
+    static let sheenGreen = UIColor(hex: "#8FD400")
+    static let shimmeringBlush = UIColor(hex: "#D98695")
+    static let shinyShamrock = UIColor(hex: "#5FA778")
+    static let shockingPink = UIColor(hex: "#FC0FC0")
+    static let shockingPinkCrayola = UIColor(hex: "#FF6FFF")
+    static let sienna = UIColor(hex: "#882D17")
+    static let silver = UIColor(hex: "#C0C0C0")
+    static let silverChalice = UIColor(hex: "#ACACAC")
+    static let silverLakeBlue = UIColor(hex: "#5D89BA")
+    static let silverPink = UIColor(hex: "#C4AEAD")
+    static let silverSand = UIColor(hex: "#BFC1C2")
+    static let sinopia = UIColor(hex: "#CB410B")
+    static let sizzlingRed = UIColor(hex: "#FF3855")
+    static let sizzlingSunrise = UIColor(hex: "#FFDB00")
+    static let skobeloff = UIColor(hex: "#007474")
+    static let skyBlue = UIColor(hex: "#87CEEB")
+    static let skyMagenta = UIColor(hex: "#CF71AF")
+    static let slateBlue = UIColor(hex: "#6A5ACD")
+    static let slateGray = UIColor(hex: "#708090")
+    static let smaltDarkPowderBlue = UIColor(hex: "#003399")
+    static let slimyGreen = UIColor(hex: "#299617")
+    static let smashedPumpkin = UIColor(hex: "#FF6D3A")
+    static let smitten = UIColor(hex: "#C84186")
+    static let smoke = UIColor(hex: "#738276")
+    static let smokeyTopaz = UIColor(hex: "#832A0D")
+    static let smokyBlack = UIColor(hex: "#100C08")
+    static let smokyTopaz = UIColor(hex: "#933D41")
+    static let snow = UIColor(hex: "#FFFAFA")
+    static let soap = UIColor(hex: "#CEC8EF")
+    static let solidPink = UIColor(hex: "#893843")
+    static let sonicSilver = UIColor(hex: "#757575")
+    static let spartanCrimson = UIColor(hex: "#9E1316")
+    static let spaceCadet = UIColor(hex: "#1D2951")
+    static let spanishBistre = UIColor(hex: "#807532")
+    static let spanishBlue = UIColor(hex: "#0070B8")
+    static let spanishCarmine = UIColor(hex: "#D10047")
+    static let spanishCrimson = UIColor(hex: "#E51A4C")
+    static let spanishGray = UIColor(hex: "#989898")
+    static let spanishGreen = UIColor(hex: "#009150")
+    static let spanishOrange = UIColor(hex: "#E86100")
+    static let spanishPink = UIColor(hex: "#F7BFBE")
+    static let spanishRed = UIColor(hex: "#E60026")
+    static let spanishSkyBlue = UIColor(hex: "#00FFFF")
+    static let spanishViolet = UIColor(hex: "#4C2882")
+    static let spanishViridian = UIColor(hex: "#007F5C")
+    static let spicyMix = UIColor(hex: "#8B5f4D")
+    static let spiroDiscoBall = UIColor(hex: "#0FC0FC")
+    static let springBud = UIColor(hex: "#A7FC00")
+    static let springFrost = UIColor(hex: "#87FF2A")
+    static let springGreen = UIColor(hex: "#00FF7F")
+    static let starCommandBlue = UIColor(hex: "#007BB8")
+    static let steelBlue = UIColor(hex: "#4682B4")
+    static let steelPink = UIColor(hex: "#CC33CC")
+    static let steelTeal = UIColor(hex: "#5F8A8B")
+    static let stilDeGrainYellow = UIColor(hex: "#FADA5E")
+    static let stizza = UIColor(hex: "#990000")
+    static let stormcloud = UIColor(hex: "#4F666A")
+    static let straw = UIColor(hex: "#E4D96F")
+    static let strawberry = UIColor(hex: "#FC5A8D")
+    static let sugarPlum = UIColor(hex: "#914E75")
+    static let sunburntCyclops = UIColor(hex: "#FF404C")
+    static let sunglow = UIColor(hex: "#FFCC33")
+    static let sunny = UIColor(hex: "#F2F27A")
+    static let sunray = UIColor(hex: "#E3AB57")
+    static let sunset = UIColor(hex: "#FAD6A5")
+    static let sunsetOrange = UIColor(hex: "#FD5E53")
+    static let superPink = UIColor(hex: "#CF6BA9")
+    static let sweetBrown = UIColor(hex: "#A83731")
+    static let tan = UIColor(hex: "#D2B48C")
+    static let tangelo = UIColor(hex: "#F94D00")
+    static let tangerine = UIColor(hex: "#F28500")
+    static let tangerineYellow = UIColor(hex: "#FFCC00")
+    static let tangoPink = UIColor(hex: "#E4717A")
+    static let tartOrange = UIColor(hex: "#FB4D46")
+    static let taupe = UIColor(hex: "#483C32")
+    static let taupeGray = UIColor(hex: "#8B8589")
+    static let teaGreen = UIColor(hex: "#D0F0C0")
+    static let teaRose = UIColor(hex: "#F88379")
+    static let teal = UIColor(hex: "#008080")
+    static let tealBlue = UIColor(hex: "#367588")
+    static let tealDeer = UIColor(hex: "#99E6B3")
+    static let tealGreen = UIColor(hex: "#00827F")
+    static let telemagenta = UIColor(hex: "#CF3476")
+    static let tenneTawny = UIColor(hex: "#CD5700")
+    static let terraCotta = UIColor(hex: "#E2725B")
+    static let thistle = UIColor(hex: "#D8BFD8")
+    static let thulianPink = UIColor(hex: "#DE6FA1")
+    static let tickleMePink = UIColor(hex: "#FC89AC")
+    static let tiffanyBlue = UIColor(hex: "#0ABAB5")
+    static let tigersEye = UIColor(hex: "#E08D3C")
+    static let timberwolf = UIColor(hex: "#DBD7D2")
+    static let titaniumYellow = UIColor(hex: "#EEE600")
+    static let tomato = UIColor(hex: "#FF6347")
+    static let toolbox = UIColor(hex: "#746CC0")
+    static let topaz = UIColor(hex: "#FFC87C")
+    static let tractorRed = UIColor(hex: "#FD0E35")
+    static let trolleyGrey = UIColor(hex: "#808080")
+    static let tropicalRainForest = UIColor(hex: "#00755E")
+    static let tropicalViolet = UIColor(hex: "#CDA4DE")
+    static let trueBlue = UIColor(hex: "#0073CF")
+    static let tuftsBlue = UIColor(hex: "#3E8EDE")
+    static let tulip = UIColor(hex: "#FF878D")
+    static let tumbleweed = UIColor(hex: "#DEAA88")
+    static let turkishRose = UIColor(hex: "#B57281")
+    static let turquoise = UIColor(hex: "#40E0D0")
+    static let turquoiseBlue = UIColor(hex: "#00FFEF")
+    static let turquoiseGreen = UIColor(hex: "#A0D6B4")
+    static let turquoiseSurf = UIColor(hex: "#00C5CD")
+    static let turtleGreen = UIColor(hex: "#8A9A5B")
+    static let tuscan = UIColor(hex: "#FAD6A5")
+    static let tuscanBrown = UIColor(hex: "#6F4E37")
+    static let tuscanRed = UIColor(hex: "#7C4848")
+    static let tuscanTan = UIColor(hex: "#A67B5B")
+    static let tuscany = UIColor(hex: "#C09999")
+    static let twilightLavender = UIColor(hex: "#8A496B")
+    static let tyrianPurple = UIColor(hex: "#66023C")
+    static let uABlue = UIColor(hex: "#0033AA")
+    static let uARed = UIColor(hex: "#D9004C")
+    static let ube = UIColor(hex: "#8878C3")
+    static let uCLABlue = UIColor(hex: "#536895")
+    static let uCLAGold = UIColor(hex: "#FFB300")
+    static let uFOGreen = UIColor(hex: "#3CD070")
+    static let ultramarine = UIColor(hex: "#3F00FF")
+    static let ultramarineBlue = UIColor(hex: "#4166F5")
+    static let ultraPink = UIColor(hex: "#FF6FFF")
+    static let ultraRed = UIColor(hex: "#FC6C85")
+    static let umber = UIColor(hex: "#635147")
+    static let unbleachedSilk = UIColor(hex: "#FFDDCA")
+    static let unitedNationsBlue = UIColor(hex: "#5B92E5")
+    static let universityOfCaliforniaGold = UIColor(hex: "#B78727")
+    static let unmellowYellow = UIColor(hex: "#FFFF66")
+    static let uPForestGreen = UIColor(hex: "#014421")
+    static let uPMaroon = UIColor(hex: "#7B1113")
+    static let upsdellRed = UIColor(hex: "#AE2029")
+    static let urobilin = UIColor(hex: "#E1AD21")
+    static let uSAFABlue = UIColor(hex: "#004F98")
+    static let uSCCardinal = UIColor(hex: "#990000")
+    static let uSCGold = UIColor(hex: "#FFCC00")
+    static let universityOfTennesseeOrange = UIColor(hex: "#F77F00")
+    static let utahCrimson = UIColor(hex: "#D3003F")
+    static let vanDykeBrown = UIColor(hex: "#664228")
+    static let vanilla = UIColor(hex: "#F3E5AB")
+    static let vanillaIce = UIColor(hex: "#F38FA9")
+    static let vegasGold = UIColor(hex: "#C5B358")
+    static let venetianRed = UIColor(hex: "#C80815")
+    static let verdigris = UIColor(hex: "#43B3AE")
+    static let vermilion = UIColor(hex: "#E34234")
+    static let veronica = UIColor(hex: "#A020F0")
+    static let veryLightAzure = UIColor(hex: "#74BBFB")
+    static let veryLightBlue = UIColor(hex: "#6666FF")
+    static let veryLightMalachiteGreen = UIColor(hex: "#64E986")
+    static let veryLightTangelo = UIColor(hex: "#FFB077")
+    static let veryPaleOrange = UIColor(hex: "#FFDFBF")
+    static let veryPaleYellow = UIColor(hex: "#FFFFBF")
+    static let violet = UIColor(hex: "#8F00FF")
+    static let violetColorWheel = UIColor(hex: "#7F00FF")
+    static let violetRYB = UIColor(hex: "#8601AF")
+    static let violetWeb = UIColor(hex: "#EE82EE")
+    static let violetBlue = UIColor(hex: "#324AB2")
+    static let violetRed = UIColor(hex: "#F75394")
+    static let viridian = UIColor(hex: "#40826D")
+    static let viridianGreen = UIColor(hex: "#009698")
+    static let vistaBlue = UIColor(hex: "#7C9ED9")
+    static let vividAmber = UIColor(hex: "#CC9900")
+    static let vividAuburn = UIColor(hex: "#922724")
+    static let vividBurgundy = UIColor(hex: "#9F1D35")
+    static let vividCerise = UIColor(hex: "#DA1D81")
+    static let vividCerulean = UIColor(hex: "#00AAEE")
+    static let vividCrimson = UIColor(hex: "#CC0033")
+    static let vividGamboge = UIColor(hex: "#FF9900")
+    static let vividLimeGreen = UIColor(hex: "#A6D608")
+    static let vividMalachite = UIColor(hex: "#00CC33")
+    static let vividMulberry = UIColor(hex: "#B80CE3")
+    static let vividOrange = UIColor(hex: "#FF5F00")
+    static let vividOrangePeel = UIColor(hex: "#FFA000")
+    static let vividOrchid = UIColor(hex: "#CC00FF")
+    static let vividRaspberry = UIColor(hex: "#FF006C")
+    static let vividRed = UIColor(hex: "#F70D1A")
+    static let vividRedTangelo = UIColor(hex: "#DF6124")
+    static let vividSkyBlue = UIColor(hex: "#00CCFF")
+    static let vividTangelo = UIColor(hex: "#F07427")
+    static let vividTangerine = UIColor(hex: "#FFA089")
+    static let vividVermilion = UIColor(hex: "#E56024")
+    static let vividViolet = UIColor(hex: "#9F00FF")
+    static let vividYellow = UIColor(hex: "#FFE302")
+    static let volt = UIColor(hex: "#CEFF00")
+    static let wageningenGreen = UIColor(hex: "#34B233")
+    static let warmBlack = UIColor(hex: "#004242")
+    static let waterspout = UIColor(hex: "#A4F4F9")
+    static let weldonBlue = UIColor(hex: "#7C98AB")
+    static let wenge = UIColor(hex: "#645452")
+    static let wheat = UIColor(hex: "#F5DEB3")
+    static let white = UIColor(hex: "#FFFFFF")
+    static let whiteSmoke = UIColor(hex: "#F5F5F5")
+    static let wildBlueYonder = UIColor(hex: "#A2ADD0")
+    static let wildOrchid = UIColor(hex: "#D470A2")
+    static let wildStrawberry = UIColor(hex: "#FF43A4")
+    static let wildWatermelon = UIColor(hex: "#FC6C85")
+    static let willpowerOrange = UIColor(hex: "#FD5800")
+    static let windsorTan = UIColor(hex: "#A75502")
+    static let wine = UIColor(hex: "#722F37")
+    static let wineDregs = UIColor(hex: "#673147")
+    static let winterSky = UIColor(hex: "#FF007C")
+    static let winterWizard = UIColor(hex: "#A0E6FF")
+    static let wintergreenDream = UIColor(hex: "#56887D")
+    static let wisteria = UIColor(hex: "#C9A0DC")
+    static let woodBrown = UIColor(hex: "#C19A6B")
+    static let xanadu = UIColor(hex: "#738678")
+    static let yaleBlue = UIColor(hex: "#0F4D92")
+    static let yankeesBlue = UIColor(hex: "#1C2841")
+    static let yellow = UIColor(hex: "#FFFF00")
+    static let yellowCrayola = UIColor(hex: "#FCE883")
+    static let yellowMunsell = UIColor(hex: "#EFCC00")
+    static let yellowNCS = UIColor(hex: "#FFD300")
+    static let yellowPantone = UIColor(hex: "#FEDF00")
+    static let yellowProcess = UIColor(hex: "#FFEF00")
+    static let yellowRYB = UIColor(hex: "#FEFE33")
+    static let yellowGreen = UIColor(hex: "#9ACD32")
+    static let yellowOrange = UIColor(hex: "#FFAE42")
+    static let yellowRose = UIColor(hex: "#FFF000")
+    static let yellowSunshine = UIColor(hex: "#FFF700")
+    static let zaffre = UIColor(hex: "#0014A8")
+    static let zinnwalditeBrown = UIColor(hex: "#2C1608")
+    static let zomp = UIColor(hex: "#39A78E")
 }
